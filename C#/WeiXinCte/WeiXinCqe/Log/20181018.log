@@ -1,0 +1,42 @@
+[2018-10-18 16:31:49]    获取数据库DataTable失败SQL语句为:SELECT TO_CHAR( RECORDDATE,'YYYY-MM-DD') AS RECORDDATE ,CLASSTYPE,CLASSWORKTYPE,SUBSTR(OVERTIMETYPE,1,1)||'+'||SUBSTR(AFTEROVERTIMETYPE,1,1) AS OVERTIMETYPE, BEFOREZERO,AFTERZERO,OVERTIME,ROUND( HOLIDAYFEE*1/21.75/8 ,2) AS HOLIDAYFEE  FROM  STAFF_HOLIDAY_ADJUSTINFO WHERE STAFFID='082260' AND RECORDDATE =TO_DATE('3班2倒','YYYY-MM-DD')错误原因:System.Data.OracleClient.OracleException (0x80131938): ORA-01861: literal does not match format string
+
+   在 System.Data.OracleClient.OracleConnection.CheckError(OciErrorHandle errorHandle, Int32 rc)
+   在 System.Data.OracleClient.OracleDataReader.ReadInternal()
+   在 System.Data.OracleClient.OracleDataReader.Read()
+   在 System.Data.Common.DataAdapter.FillLoadDataRow(SchemaMapping mapping)
+   在 System.Data.Common.DataAdapter.FillFromReader(DataSet dataset, DataTable datatable, String srcTable, DataReaderContainer dataReader, Int32 startRecord, Int32 maxRecords, DataColumn parentChapterColumn, Object parentChapterValue)
+   在 System.Data.Common.DataAdapter.Fill(DataTable[] dataTables, IDataReader dataReader, Int32 startRecord, Int32 maxRecords)
+   在 System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   在 WeiXinCqe.OracleOperateHelp.ExecuteDataTable(String connectionString, CommandType cmdType, String cmdText, OracleParameter[] commandParameters) 位置 C:\Users\cqe171601\Desktop\WeiXinCqe\WeiXinCqe\class\OracleOperateHelp.cs:行号 106
+   在 WeiXinCqe.OracleOperateHelp.getDataTable(String sql) 位置 C:\Users\cqe171601\Desktop\WeiXinCqe\WeiXinCqe\class\OracleOperateHelp.cs:行号 53
+
+[2018-10-18 16:32:42]    获取数据库DataTable失败SQL语句为:SELECT TO_CHAR( RECORDDATE,'YYYY-MM-DD') AS RECORDDATE ,CLASSTYPE,CLASSWORKTYPE,SUBSTR(OVERTIMETYPE,1,1)||'+'||SUBSTR(AFTEROVERTIMETYPE,1,1) AS OVERTIMETYPE, BEFOREZERO,AFTERZERO,OVERTIME,ROUND( HOLIDAYFEE*1/21.75/8 ,2) AS HOLIDAYFEE  FROM  STAFF_HOLIDAY_ADJUSTINFO WHERE STAFFID='082260' AND RECORDDATE =TO_DATE('3班2倒','YYYY-MM-DD')错误原因:System.Data.OracleClient.OracleException (0x80131938): ORA-01861: literal does not match format string
+
+   在 System.Data.OracleClient.OracleConnection.CheckError(OciErrorHandle errorHandle, Int32 rc)
+   在 System.Data.OracleClient.OracleDataReader.ReadInternal()
+   在 System.Data.OracleClient.OracleDataReader.Read()
+   在 System.Data.Common.DataAdapter.FillLoadDataRow(SchemaMapping mapping)
+   在 System.Data.Common.DataAdapter.FillFromReader(DataSet dataset, DataTable datatable, String srcTable, DataReaderContainer dataReader, Int32 startRecord, Int32 maxRecords, DataColumn parentChapterColumn, Object parentChapterValue)
+   在 System.Data.Common.DataAdapter.Fill(DataTable[] dataTables, IDataReader dataReader, Int32 startRecord, Int32 maxRecords)
+   在 System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   在 WeiXinCqe.OracleOperateHelp.ExecuteDataTable(String connectionString, CommandType cmdType, String cmdText, OracleParameter[] commandParameters) 位置 C:\Users\cqe171601\Desktop\WeiXinCqe\WeiXinCqe\class\OracleOperateHelp.cs:行号 106
+   在 WeiXinCqe.OracleOperateHelp.getDataTable(String sql) 位置 C:\Users\cqe171601\Desktop\WeiXinCqe\WeiXinCqe\class\OracleOperateHelp.cs:行号 53
+
+[2018-10-18 16:32:56]    获取数据库DataTable失败SQL语句为:SELECT TO_CHAR( RECORDDATE,'YYYY-MM-DD') AS RECORDDATE ,CLASSTYPE,CLASSWORKTYPE,SUBSTR(OVERTIMETYPE,1,1)||'+'||SUBSTR(AFTEROVERTIMETYPE,1,1) AS OVERTIMETYPE, BEFOREZERO,AFTERZERO,OVERTIME,ROUND( HOLIDAYFEE*1/21.75/8 ,2) AS HOLIDAYFEE  FROM  STAFF_HOLIDAY_ADJUSTINFO WHERE STAFFID='082260' AND RECORDDATE =TO_DATE('3班2倒','YYYY-MM-DD')错误原因:System.Data.OracleClient.OracleException (0x80131938): ORA-01861: literal does not match format string
+
+   在 System.Data.OracleClient.OracleConnection.CheckError(OciErrorHandle errorHandle, Int32 rc)
+   在 System.Data.OracleClient.OracleDataReader.ReadInternal()
+   在 System.Data.OracleClient.OracleDataReader.Read()
+   在 System.Data.Common.DataAdapter.FillLoadDataRow(SchemaMapping mapping)
+   在 System.Data.Common.DataAdapter.FillFromReader(DataSet dataset, DataTable datatable, String srcTable, DataReaderContainer dataReader, Int32 startRecord, Int32 maxRecords, DataColumn parentChapterColumn, Object parentChapterValue)
+   在 System.Data.Common.DataAdapter.Fill(DataTable[] dataTables, IDataReader dataReader, Int32 startRecord, Int32 maxRecords)
+   在 System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   在 WeiXinCqe.OracleOperateHelp.ExecuteDataTable(String connectionString, CommandType cmdType, String cmdText, OracleParameter[] commandParameters) 位置 C:\Users\cqe171601\Desktop\WeiXinCqe\WeiXinCqe\class\OracleOperateHelp.cs:行号 106
+   在 WeiXinCqe.OracleOperateHelp.getDataTable(String sql) 位置 C:\Users\cqe171601\Desktop\WeiXinCqe\WeiXinCqe\class\OracleOperateHelp.cs:行号 53
+

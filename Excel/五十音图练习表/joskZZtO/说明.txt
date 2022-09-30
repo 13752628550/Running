@@ -1,0 +1,2 @@
+运行  注册控件.bat 会把vbaTimer复制到 system32文件夹，并注册
+运行  反注册控件.bat 会先反注册 vbaTimer控件，然后再删除system32文件夹下的vbaTimer

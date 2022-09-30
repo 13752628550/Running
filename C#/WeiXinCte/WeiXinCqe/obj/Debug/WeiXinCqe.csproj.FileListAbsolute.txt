@@ -1,0 +1,103 @@
+c:\users\cqe092156\documents\visual studio 2010\Projects\WeiXinCqe\WeiXinCqe\bin\WeiXinCqe.dll
+c:\users\cqe092156\documents\visual studio 2010\Projects\WeiXinCqe\WeiXinCqe\bin\WeiXinCqe.pdb
+c:\users\cqe092156\documents\visual studio 2010\Projects\WeiXinCqe\WeiXinCqe\obj\Debug\WeiXinCqe.dll
+c:\users\cqe092156\documents\visual studio 2010\Projects\WeiXinCqe\WeiXinCqe\obj\Debug\WeiXinCqe.pdb
+c:\users\cqe092156\documents\visual studio 2010\Projects\WeiXinCqe\WeiXinCqe\bin\WeiXinWebApp.dll
+c:\users\cqe092156\documents\visual studio 2010\Projects\WeiXinCqe\WeiXinCqe\bin\Newtonsoft.Json.dll
+c:\users\cqe092156\documents\visual studio 2010\Projects\WeiXinCqe\WeiXinCqe\bin\WeiXinWebApp.pdb
+c:\users\cqe092156\documents\visual studio 2010\Projects\WeiXinCqe\WeiXinCqe\obj\Debug\WeiXinCqe.csprojResolveAssemblyReference.cache
+C:\Users\cqe092156\Desktop\微信web\WeiXinCqe\WeiXinCqe\bin\WeiXinCqe.pdb
+C:\Users\cqe092156\Desktop\微信web\WeiXinCqe\WeiXinCqe\bin\WeiXinWebApp.pdb
+C:\Users\cqe092156\Desktop\微信web\WeiXinCqe\WeiXinCqe\obj\Debug\WeiXinCqe.csprojResolveAssemblyReference.cache
+C:\Users\cqe092156\Desktop\微信web\WeiXinCqe\WeiXinCqe\obj\Debug\WeiXinCqe.dll
+C:\Users\cqe092156\Desktop\微信web\WeiXinCqe\WeiXinCqe\obj\Debug\WeiXinCqe.pdb
+P:\08 総務部\04 システム科\CQE092156\目前在用系统最新源代码\微信web\WeiXinCqe\WeiXinCqe\bin\WeiXinCqe.pdb
+P:\08 総務部\04 システム科\CQE092156\目前在用系统最新源代码\微信web\WeiXinCqe\WeiXinCqe\obj\Debug\WeiXinCqe.csprojResolveAssemblyReference.cache
+P:\08 総務部\04 システム科\CQE092156\目前在用系统最新源代码\微信web\WeiXinCqe\WeiXinCqe\obj\Debug\WeiXinCqe.dll
+P:\08 総務部\04 システム科\CQE092156\目前在用系统最新源代码\微信web\WeiXinCqe\WeiXinCqe\obj\Debug\WeiXinCqe.pdb
+P:\08 総務部\04 システム科\CQE092156\目前在用系统最新源代码\微信web\WeiXinCqe\WeiXinCqe\bin\WeiXinCqe.dll.config
+C:\Users\cqe171601\Desktop\WeiXinCqe\WeiXinCqe\bin\WeiXinCqe.dll.config
+C:\Users\cqe171601\Desktop\WeiXinCqe\WeiXinCqe\bin\WeiXinCqe.pdb
+C:\Users\cqe171601\Desktop\WeiXinCqe\WeiXinCqe\bin\Newtonsoft.Json.dll
+C:\Users\cqe171601\Desktop\WeiXinCqe\WeiXinCqe\bin\System.Net.Http.dll
+C:\Users\cqe171601\Desktop\WeiXinCqe\WeiXinCqe\bin\System.Net.Http.Formatting.dll
+C:\Users\cqe171601\Desktop\WeiXinCqe\WeiXinCqe\bin\System.Net.Http.WebRequest.dll
+C:\Users\cqe171601\Desktop\WeiXinCqe\WeiXinCqe\bin\System.Web.Http.dll
+C:\Users\cqe171601\Desktop\WeiXinCqe\WeiXinCqe\bin\System.Web.Http.WebHost.dll
+C:\Users\cqe171601\Desktop\WeiXinCqe\WeiXinCqe\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\cqe171601\Desktop\WeiXinCqe\WeiXinCqe\bin\Newtonsoft.Json.xml
+C:\Users\cqe171601\Desktop\WeiXinCqe\WeiXinCqe\bin\System.Net.Http.xml
+C:\Users\cqe171601\Desktop\WeiXinCqe\WeiXinCqe\bin\System.Net.Http.Formatting.xml
+C:\Users\cqe171601\Desktop\WeiXinCqe\WeiXinCqe\bin\System.Net.Http.WebRequest.xml
+C:\Users\cqe171601\Desktop\WeiXinCqe\WeiXinCqe\bin\System.Web.Http.xml
+C:\Users\cqe171601\Desktop\WeiXinCqe\WeiXinCqe\bin\System.Web.Http.WebHost.xml
+C:\Users\cqe171601\Desktop\WeiXinCqe\WeiXinCqe\bin\Microsoft.Web.Infrastructure.xml
+C:\Users\cqe171601\Desktop\WeiXinCqe\WeiXinCqe\obj\Debug\WeiXinCqe.dll
+C:\Users\cqe171601\Desktop\WeiXinCqe\WeiXinCqe\obj\Debug\WeiXinCqe.pdb
+C:\Users\cqe171601\Desktop\WeiXinCqe\WeiXinCqe\obj\Debug\WeiXinCqe.csproj.CoreCompileInputs.cache
+C:\Users\cqe171601\Desktop\WeiXinCqe\WeiXinCqe\obj\Debug\WeiXinCqe.csproj.CopyComplete
+C:\Users\cqe171601\Desktop\WeiXinCqe\WeiXinCqe\obj\Debug\WeiXinCqe.csprojAssemblyReference.cache
+C:\Users\cqe171601\Desktop\WeiXinCqe(M)20190212\WeiXinCqe\bin\WeiXinCqe.dll.config
+C:\Users\cqe171601\Desktop\WeiXinCqe(M)20190212\WeiXinCqe\bin\WeiXinCqe.pdb
+C:\Users\cqe171601\Desktop\WeiXinCqe(M)20190212\WeiXinCqe\bin\Newtonsoft.Json.dll
+C:\Users\cqe171601\Desktop\WeiXinCqe(M)20190212\WeiXinCqe\bin\System.Net.Http.dll
+C:\Users\cqe171601\Desktop\WeiXinCqe(M)20190212\WeiXinCqe\bin\System.Net.Http.Formatting.dll
+C:\Users\cqe171601\Desktop\WeiXinCqe(M)20190212\WeiXinCqe\bin\System.Net.Http.WebRequest.dll
+C:\Users\cqe171601\Desktop\WeiXinCqe(M)20190212\WeiXinCqe\bin\System.Web.Http.dll
+C:\Users\cqe171601\Desktop\WeiXinCqe(M)20190212\WeiXinCqe\bin\System.Web.Http.WebHost.dll
+C:\Users\cqe171601\Desktop\WeiXinCqe(M)20190212\WeiXinCqe\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\cqe171601\Desktop\WeiXinCqe(M)20190212\WeiXinCqe\bin\Newtonsoft.Json.xml
+C:\Users\cqe171601\Desktop\WeiXinCqe(M)20190212\WeiXinCqe\bin\System.Net.Http.xml
+C:\Users\cqe171601\Desktop\WeiXinCqe(M)20190212\WeiXinCqe\bin\System.Net.Http.Formatting.xml
+C:\Users\cqe171601\Desktop\WeiXinCqe(M)20190212\WeiXinCqe\bin\System.Net.Http.WebRequest.xml
+C:\Users\cqe171601\Desktop\WeiXinCqe(M)20190212\WeiXinCqe\bin\System.Web.Http.xml
+C:\Users\cqe171601\Desktop\WeiXinCqe(M)20190212\WeiXinCqe\bin\System.Web.Http.WebHost.xml
+C:\Users\cqe171601\Desktop\WeiXinCqe(M)20190212\WeiXinCqe\bin\Microsoft.Web.Infrastructure.xml
+C:\Users\cqe171601\Desktop\WeiXinCqe(M)20190212\WeiXinCqe\obj\Debug\WeiXinCqe.csproj.CoreCompileInputs.cache
+C:\Users\cqe171601\Desktop\WeiXinCqe(M)20190212\WeiXinCqe\obj\Debug\WeiXinCqe.csproj.CopyComplete
+C:\Users\cqe171601\Desktop\WeiXinCqe(M)20190212\WeiXinCqe\obj\Debug\WeiXinCqe.dll
+C:\Users\cqe171601\Desktop\WeiXinCqe(M)20190212\WeiXinCqe\obj\Debug\WeiXinCqe.pdb
+C:\Users\cqe171601\Desktop\WeiXinCqe(M)20190212\WeiXinCqe\obj\Debug\WeiXinCqe.csprojAssemblyReference.cache
+C:\Users\cqe171601\Desktop\WeiXinCqe(M)20190527\WeiXinCqe\obj\Debug\WeiXinCqe.csproj.CoreCompileInputs.cache
+C:\Users\cqe171601\Desktop\WeiXinCqe(M)20190527\WeiXinCqe\obj\Debug\WeiXinCqe.dll
+C:\Users\cqe171601\Desktop\WeiXinCqe(M)20190527\WeiXinCqe\obj\Debug\WeiXinCqe.pdb
+C:\Users\cqe171601\Desktop\WeiXinCqe(M)20190527\WeiXinCqe\bin\WeiXinCqe.dll.config
+C:\Users\cqe171601\Desktop\WeiXinCqe(M)20190527\WeiXinCqe\bin\WeiXinCqe.pdb
+C:\Users\cqe171601\Desktop\WeiXinCqe(M)20190527\WeiXinCqe\bin\Newtonsoft.Json.dll
+C:\Users\cqe171601\Desktop\WeiXinCqe(M)20190527\WeiXinCqe\bin\System.Net.Http.dll
+C:\Users\cqe171601\Desktop\WeiXinCqe(M)20190527\WeiXinCqe\bin\System.Net.Http.Formatting.dll
+C:\Users\cqe171601\Desktop\WeiXinCqe(M)20190527\WeiXinCqe\bin\System.Net.Http.WebRequest.dll
+C:\Users\cqe171601\Desktop\WeiXinCqe(M)20190527\WeiXinCqe\bin\System.Web.Http.dll
+C:\Users\cqe171601\Desktop\WeiXinCqe(M)20190527\WeiXinCqe\bin\System.Web.Http.WebHost.dll
+C:\Users\cqe171601\Desktop\WeiXinCqe(M)20190527\WeiXinCqe\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\cqe171601\Desktop\WeiXinCqe(M)20190527\WeiXinCqe\bin\Newtonsoft.Json.xml
+C:\Users\cqe171601\Desktop\WeiXinCqe(M)20190527\WeiXinCqe\bin\System.Net.Http.xml
+C:\Users\cqe171601\Desktop\WeiXinCqe(M)20190527\WeiXinCqe\bin\System.Net.Http.Formatting.xml
+C:\Users\cqe171601\Desktop\WeiXinCqe(M)20190527\WeiXinCqe\bin\System.Net.Http.WebRequest.xml
+C:\Users\cqe171601\Desktop\WeiXinCqe(M)20190527\WeiXinCqe\bin\System.Web.Http.xml
+C:\Users\cqe171601\Desktop\WeiXinCqe(M)20190527\WeiXinCqe\bin\System.Web.Http.WebHost.xml
+C:\Users\cqe171601\Desktop\WeiXinCqe(M)20190527\WeiXinCqe\bin\Microsoft.Web.Infrastructure.xml
+C:\Users\cqe171601\Desktop\WeiXinCqe(M)20190527\WeiXinCqe\obj\Debug\WeiXinCqe.csproj.CopyComplete
+C:\Users\cqe171601\Desktop\WeiXinCqe(M)20190527\WeiXinCqe\obj\Debug\WeiXinCqe.csprojAssemblyReference.cache
+D:\代码文件\现使用程序代码\WeiXinCqe(M)20190527\WeiXinCqe\obj\Debug\WeiXinCqe.csproj.CoreCompileInputs.cache
+D:\代码文件\现使用程序代码\WeiXinCqe(M)20190527\WeiXinCqe\obj\Debug\WeiXinCqe.dll
+D:\代码文件\现使用程序代码\WeiXinCqe(M)20190527\WeiXinCqe\obj\Debug\WeiXinCqe.pdb
+D:\代码文件\现使用程序代码\WeiXinCqe(M)20190527\WeiXinCqe\bin\WeiXinCqe.dll.config
+D:\代码文件\现使用程序代码\WeiXinCqe(M)20190527\WeiXinCqe\bin\WeiXinCqe.pdb
+D:\代码文件\现使用程序代码\WeiXinCqe(M)20190527\WeiXinCqe\bin\Newtonsoft.Json.dll
+D:\代码文件\现使用程序代码\WeiXinCqe(M)20190527\WeiXinCqe\bin\System.Net.Http.dll
+D:\代码文件\现使用程序代码\WeiXinCqe(M)20190527\WeiXinCqe\bin\System.Net.Http.Formatting.dll
+D:\代码文件\现使用程序代码\WeiXinCqe(M)20190527\WeiXinCqe\bin\System.Net.Http.WebRequest.dll
+D:\代码文件\现使用程序代码\WeiXinCqe(M)20190527\WeiXinCqe\bin\System.Web.Http.dll
+D:\代码文件\现使用程序代码\WeiXinCqe(M)20190527\WeiXinCqe\bin\System.Web.Http.WebHost.dll
+D:\代码文件\现使用程序代码\WeiXinCqe(M)20190527\WeiXinCqe\bin\Microsoft.Web.Infrastructure.dll
+D:\代码文件\现使用程序代码\WeiXinCqe(M)20190527\WeiXinCqe\bin\Newtonsoft.Json.xml
+D:\代码文件\现使用程序代码\WeiXinCqe(M)20190527\WeiXinCqe\bin\System.Net.Http.xml
+D:\代码文件\现使用程序代码\WeiXinCqe(M)20190527\WeiXinCqe\bin\System.Net.Http.Formatting.xml
+D:\代码文件\现使用程序代码\WeiXinCqe(M)20190527\WeiXinCqe\bin\System.Net.Http.WebRequest.xml
+D:\代码文件\现使用程序代码\WeiXinCqe(M)20190527\WeiXinCqe\bin\System.Web.Http.xml
+D:\代码文件\现使用程序代码\WeiXinCqe(M)20190527\WeiXinCqe\bin\System.Web.Http.WebHost.xml
+D:\代码文件\现使用程序代码\WeiXinCqe(M)20190527\WeiXinCqe\bin\Microsoft.Web.Infrastructure.xml
+D:\代码文件\现使用程序代码\WeiXinCqe(M)20190527\WeiXinCqe\obj\Debug\WeiXinCqe.csproj.CopyComplete
+D:\代码文件\现使用程序代码\WeiXinCqe(M)20190527\WeiXinCqe\bin\FineUI.dll
+D:\代码文件\现使用程序代码\WeiXinCqe(M)20190527\WeiXinCqe\bin\FineUI.xml

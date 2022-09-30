@@ -1,0 +1,23 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>date demo</title>
+
+<link rel="stylesheet" href="css/date.css">
+
+</head>
+<body>
+
+<h3>点击输入框，选择时间</h3>
+<input type="text" id="date3" data-options="{'type':'YYYY-MM-DD hh:mm','beginYear':2010,'endYear':2088,'location':'before' }"    style="width:166px;height:19px;">
+
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/jquery.date.js"></script>
+<script type="text/javascript">
+$.date('#date3');
+</script>
+
+</body>
+</html>

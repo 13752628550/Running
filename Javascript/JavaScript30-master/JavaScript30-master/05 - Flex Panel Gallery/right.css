@@ -1,0 +1,97 @@
+html,
+body {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+html {
+  font-family: "helvetica neue";
+  font-size: 20px;
+  font-weight: 300;
+}
+
+.panel1 {
+  background: url(https://source.unsplash.com/gYl-UtwNg_I/1500x1500)
+    center/cover;
+}
+
+.panel2 {
+  background: url(https://source.unsplash.com/rFKUFzjPYiQ/1500x1500)
+    center/cover;
+}
+
+.panel3 {
+  background: url(https://images.unsplash.com/photo-1465188162913-8fb5709d6d57?ixlib=rb-0.3.5&q=80&fm=jpg&crop=faces&cs=tinysrgb&w=1500&h=1500&fit=crop&s=967e8a713a4e395260793fc8c802901d)
+    center/cover;
+}
+.panel4 {
+  background: url(https://source.unsplash.com/ITjiVXcwVng/1500x1500)
+    center/cover;
+}
+.panel5 {
+  background: url(https://source.unsplash.com/3MNzGlQM7qs/1500x1500)
+    center/cover;
+}
+
+.panels {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+
+  text-align: center;
+}
+
+.panel {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  color: white;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.panel > * {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  width: 100%;
+  transition: all 0.5s;
+}
+.panel p {
+  text-transform: uppercase;
+  font-family: "Amatic SC", cursive;
+  text-shadow: 0 0 4px rgb(0, 0, 0, 0.72);
+  font-size: 2rem;
+}
+.panel p:nth-child(2) {
+  font-size: 4rem;
+}
+.panel.open {
+  flex: 5;
+  font-size: 40px;
+}
+.panel > *:first-child {
+  transform: translateY(-100%);
+}
+
+.panel.open-active > *:first-child {
+  transform: translateY(0);
+}
+
+.panel > *:last-child {
+  transform: translateY(100%);
+}
+
+.panel.open-active > *:last-child {
+  transform: translateY(0);
+}

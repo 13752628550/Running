@@ -1,0 +1,70 @@
+[2020-10-12 15:45:38]    获取数据库DataTable失败SQL语句为: SELECT TO_CHAR(YYYYMMDD,'YYYY-MM-DD') YYYYMMDD ,TEMPERATURE, (CASE WHEN TEMPERATURE IS NULL THEN NULL WHEN COUGH || MEDICINE || QD || ONEHOUSE || HUBEI = '00100' THEN '无'  ELSE(CASE WHEN COUGH = 1 THEN '咳嗽;' ELSE '' END) || (CASE WHEN MEDICINE = 1 THEN '就医;' ELSE '' END) || (CASE WHEN QD = 0 THEN '离青;' ELSE '' END ) || (CASE WHEN ONEHOUSE = 1 THEN '同住异常;' ELSE '' END ) || (CASE WHEN HUBEI = 1 THEN '接触疫区;' ELSE '' END ) END )||(CASE WHEN HS_JC='阳性' OR HS_JC='可疑' THEN HS_JC ELSE '' END)  YC, STAFFID ,LOCATION || LOC01 || LOC02 LOC FROM WEIXIN_DOVTE_GZFY  WHERE STAFFID = '171601' AND YYYYMMDD> SYSDATE - 17 ORDER BY YYYYMMDD desc错误原因:System.Data.OracleClient.OracleException (0x80131938): ORA-12704: 字符集不匹配
+
+   at System.Data.OracleClient.OracleConnection.CheckError(OciErrorHandle errorHandle, Int32 rc)
+   at System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, Boolean needRowid, OciRowidDescriptor& rowidDescriptor, ArrayList& resultParameterOrdinals)
+   at System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, ArrayList& resultParameterOrdinals)
+   at System.Data.OracleClient.OracleCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.OracleClient.OracleCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   at WeiXinCqe.OracleOperateHelp.ExecuteDataTable(String connectionString, CommandType cmdType, String cmdText, OracleParameter[] commandParameters) in D:\代码文件\现使用程序代码\WeiXinCqe(MS)20200311\WeiXinCqe\class\OracleOperateHelp.cs:line 106
+   at WeiXinCqe.OracleOperateHelp.getDataTable(String sql) in D:\代码文件\现使用程序代码\WeiXinCqe(MS)20200311\WeiXinCqe\class\OracleOperateHelp.cs:line 53
+
+[2020-10-12 15:46:42]    获取数据库DataTable失败SQL语句为: SELECT TO_CHAR(YYYYMMDD,'YYYY-MM-DD') YYYYMMDD ,TEMPERATURE, (CASE WHEN TEMPERATURE IS NULL THEN NULL WHEN COUGH || MEDICINE || QD || ONEHOUSE || HUBEI = '00100' THEN '无'  ELSE(CASE WHEN COUGH = 1 THEN '咳嗽;' ELSE '' END) || (CASE WHEN MEDICINE = 1 THEN '就医;' ELSE '' END) || (CASE WHEN QD = 0 THEN '离青;' ELSE '' END ) || (CASE WHEN ONEHOUSE = 1 THEN '同住异常;' ELSE '' END ) || (CASE WHEN HUBEI = 1 THEN '接触疫区;' ELSE '' END ) END )||(CASE WHEN HS_JC='阳性' OR HS_JC='可疑' THEN HS_JC ELSE '' END)  YC, STAFFID ,LOCATION || LOC01 || LOC02 LOC FROM WEIXIN_DOVTE_GZFY  WHERE STAFFID = '171601' AND YYYYMMDD> SYSDATE - 17 ORDER BY YYYYMMDD desc错误原因:System.Data.OracleClient.OracleException (0x80131938): ORA-12704: 字符集不匹配
+
+   at System.Data.OracleClient.OracleConnection.CheckError(OciErrorHandle errorHandle, Int32 rc)
+   at System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, Boolean needRowid, OciRowidDescriptor& rowidDescriptor, ArrayList& resultParameterOrdinals)
+   at System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, ArrayList& resultParameterOrdinals)
+   at System.Data.OracleClient.OracleCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.OracleClient.OracleCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   at WeiXinCqe.OracleOperateHelp.ExecuteDataTable(String connectionString, CommandType cmdType, String cmdText, OracleParameter[] commandParameters) in D:\代码文件\现使用程序代码\WeiXinCqe(MS)20200311\WeiXinCqe\class\OracleOperateHelp.cs:line 106
+   at WeiXinCqe.OracleOperateHelp.getDataTable(String sql) in D:\代码文件\现使用程序代码\WeiXinCqe(MS)20200311\WeiXinCqe\class\OracleOperateHelp.cs:line 53
+
+[2020-10-12 15:46:57]    获取数据库DataTable失败SQL语句为: SELECT TO_CHAR(YYYYMMDD,'YYYY-MM-DD') YYYYMMDD ,TEMPERATURE, (CASE WHEN TEMPERATURE IS NULL THEN NULL WHEN COUGH || MEDICINE || QD || ONEHOUSE || HUBEI = '00100' THEN '无'  ELSE(CASE WHEN COUGH = 1 THEN '咳嗽;' ELSE '' END) || (CASE WHEN MEDICINE = 1 THEN '就医;' ELSE '' END) || (CASE WHEN QD = 0 THEN '离青;' ELSE '' END ) || (CASE WHEN ONEHOUSE = 1 THEN '同住异常;' ELSE '' END ) || (CASE WHEN HUBEI = 1 THEN '接触疫区;' ELSE '' END ) END )||(CASE WHEN HS_JC='阳性' OR HS_JC='可疑' THEN HS_JC ELSE '' END)  YC, STAFFID ,LOCATION || LOC01 || LOC02 LOC FROM WEIXIN_DOVTE_GZFY  WHERE STAFFID = '171601' AND YYYYMMDD> SYSDATE - 17 ORDER BY YYYYMMDD desc错误原因:System.Data.OracleClient.OracleException (0x80131938): ORA-12704: 字符集不匹配
+
+   at System.Data.OracleClient.OracleConnection.CheckError(OciErrorHandle errorHandle, Int32 rc)
+   at System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, Boolean needRowid, OciRowidDescriptor& rowidDescriptor, ArrayList& resultParameterOrdinals)
+   at System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, ArrayList& resultParameterOrdinals)
+   at System.Data.OracleClient.OracleCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.OracleClient.OracleCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   at WeiXinCqe.OracleOperateHelp.ExecuteDataTable(String connectionString, CommandType cmdType, String cmdText, OracleParameter[] commandParameters) in D:\代码文件\现使用程序代码\WeiXinCqe(MS)20200311\WeiXinCqe\class\OracleOperateHelp.cs:line 106
+   at WeiXinCqe.OracleOperateHelp.getDataTable(String sql) in D:\代码文件\现使用程序代码\WeiXinCqe(MS)20200311\WeiXinCqe\class\OracleOperateHelp.cs:line 53
+
+[2020-10-12 15:48:23]    获取数据库DataTable失败SQL语句为: SELECT TO_CHAR(YYYYMMDD,'YYYY-MM-DD') YYYYMMDD ,TEMPERATURE, (CASE WHEN TEMPERATURE IS NULL THEN NULL WHEN COUGH || MEDICINE || QD || ONEHOUSE || HUBEI = '00100' THEN '无'  ELSE(CASE WHEN COUGH = 1 THEN '咳嗽;' ELSE '' END) || (CASE WHEN MEDICINE = 1 THEN '就医;' ELSE '' END) || (CASE WHEN QD = 0 THEN '离青;' ELSE '' END ) || (CASE WHEN ONEHOUSE = 1 THEN '同住异常;' ELSE '' END ) || (CASE WHEN HUBEI = 1 THEN '接触疫区;' ELSE '' END ) END )||(CASE WHEN HS_JC='阳性' OR HS_JC='可疑' THEN HS_JC ELSE '' END)  YC, STAFFID ,LOCATION || LOC01 || LOC02 LOC FROM WEIXIN_DOVTE_GZFY  WHERE STAFFID = '171601' AND YYYYMMDD> SYSDATE - 17 ORDER BY YYYYMMDD desc错误原因:System.Data.OracleClient.OracleException (0x80131938): ORA-12704: 字符集不匹配
+
+   at System.Data.OracleClient.OracleConnection.CheckError(OciErrorHandle errorHandle, Int32 rc)
+   at System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, Boolean needRowid, OciRowidDescriptor& rowidDescriptor, ArrayList& resultParameterOrdinals)
+   at System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, ArrayList& resultParameterOrdinals)
+   at System.Data.OracleClient.OracleCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.OracleClient.OracleCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   at WeiXinCqe.OracleOperateHelp.ExecuteDataTable(String connectionString, CommandType cmdType, String cmdText, OracleParameter[] commandParameters) in D:\代码文件\现使用程序代码\WeiXinCqe(MS)20200311\WeiXinCqe\class\OracleOperateHelp.cs:line 106
+   at WeiXinCqe.OracleOperateHelp.getDataTable(String sql) in D:\代码文件\现使用程序代码\WeiXinCqe(MS)20200311\WeiXinCqe\class\OracleOperateHelp.cs:line 53
+
+[2020-10-12 15:51:06]    获取数据库DataTable失败SQL语句为: SELECT TO_CHAR(YYYYMMDD,'YYYY-MM-DD') YYYYMMDD ,TEMPERATURE, (CASE WHEN TEMPERATURE IS NULL THEN NULL WHEN COUGH || MEDICINE || QD || ONEHOUSE || HUBEI = '00100' THEN '无'  ELSE(CASE WHEN COUGH = 1 THEN '咳嗽;' ELSE '' END) || (CASE WHEN MEDICINE = 1 THEN '就医;' ELSE '' END) || (CASE WHEN QD = 0 THEN '离青;' ELSE '' END ) || (CASE WHEN ONEHOUSE = 1 THEN '同住异常;' ELSE '' END ) || (CASE WHEN HUBEI = 1 THEN '接触疫区;' ELSE '' END ) END )||(CASE WHEN HS_JC='阳性' OR HS_JC='可疑' THEN HS_JC ELSE '' END)  YC, STAFFID ,LOCATION || LOC01 || LOC02 LOC FROM WEIXIN_DOVTE_GZFY  WHERE STAFFID = '171601' AND YYYYMMDD> SYSDATE - 17 ORDER BY YYYYMMDD desc错误原因:System.Data.OracleClient.OracleException (0x80131938): ORA-12704: 字符集不匹配
+
+   at System.Data.OracleClient.OracleConnection.CheckError(OciErrorHandle errorHandle, Int32 rc)
+   at System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, Boolean needRowid, OciRowidDescriptor& rowidDescriptor, ArrayList& resultParameterOrdinals)
+   at System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, ArrayList& resultParameterOrdinals)
+   at System.Data.OracleClient.OracleCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.OracleClient.OracleCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   at WeiXinCqe.OracleOperateHelp.ExecuteDataTable(String connectionString, CommandType cmdType, String cmdText, OracleParameter[] commandParameters) in D:\代码文件\现使用程序代码\WeiXinCqe(MS)20200311\WeiXinCqe\class\OracleOperateHelp.cs:line 106
+   at WeiXinCqe.OracleOperateHelp.getDataTable(String sql) in D:\代码文件\现使用程序代码\WeiXinCqe(MS)20200311\WeiXinCqe\class\OracleOperateHelp.cs:line 53
+

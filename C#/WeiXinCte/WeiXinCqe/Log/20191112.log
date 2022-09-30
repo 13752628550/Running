@@ -1,0 +1,28 @@
+[2019-11-12 11:48:11]    获取数据库DataTable失败SQL语句为:SELECT  TO_CHAR(STARTTIME,'YYYY-MM-DD 24H:mi') STARTTIME , TO_CHAR(ENDTIME,'YYYY-MM-DD  24H:mi') ENDTIME FROM  EXAM_LIST WHERE   ID='8D6B229EBD074B5B825E082A51FAAB7B'错误原因:System.Data.OracleClient.OracleException (0x80131938): ORA-01821: date format not recognized
+
+   在 System.Data.OracleClient.OracleConnection.CheckError(OciErrorHandle errorHandle, Int32 rc)
+   在 System.Data.OracleClient.OracleDataReader.ReadInternal()
+   在 System.Data.OracleClient.OracleDataReader.Read()
+   在 System.Data.Common.DataAdapter.FillLoadDataRow(SchemaMapping mapping)
+   在 System.Data.Common.DataAdapter.FillFromReader(DataSet dataset, DataTable datatable, String srcTable, DataReaderContainer dataReader, Int32 startRecord, Int32 maxRecords, DataColumn parentChapterColumn, Object parentChapterValue)
+   在 System.Data.Common.DataAdapter.Fill(DataTable[] dataTables, IDataReader dataReader, Int32 startRecord, Int32 maxRecords)
+   在 System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   在 WeiXinCqe.OracleOperateHelp.ExecuteDataTable(String connectionString, CommandType cmdType, String cmdText, OracleParameter[] commandParameters) 位置 D:\代码文件\现使用程序代码\WeiXinCqe(M)20190527\WeiXinCqe\class\OracleOperateHelp.cs:行号 106
+   在 WeiXinCqe.OracleOperateHelp.getDataTable(String sql) 位置 D:\代码文件\现使用程序代码\WeiXinCqe(M)20190527\WeiXinCqe\class\OracleOperateHelp.cs:行号 53
+
+[2019-11-12 11:48:48]    获取数据库DataTable失败SQL语句为:SELECT  TO_CHAR(STARTTIME,'YYYY-MM-DD 24Hi:mm') STARTTIME , TO_CHAR(ENDTIME,'YYYY-MM-DD 24Hi:mm') ENDTIME FROM  EXAM_LIST WHERE   ID='8D6B229EBD074B5B825E082A51FAAB7B'错误原因:System.Data.OracleClient.OracleException (0x80131938): ORA-01821: date format not recognized
+
+   在 System.Data.OracleClient.OracleConnection.CheckError(OciErrorHandle errorHandle, Int32 rc)
+   在 System.Data.OracleClient.OracleDataReader.ReadInternal()
+   在 System.Data.OracleClient.OracleDataReader.Read()
+   在 System.Data.Common.DataAdapter.FillLoadDataRow(SchemaMapping mapping)
+   在 System.Data.Common.DataAdapter.FillFromReader(DataSet dataset, DataTable datatable, String srcTable, DataReaderContainer dataReader, Int32 startRecord, Int32 maxRecords, DataColumn parentChapterColumn, Object parentChapterValue)
+   在 System.Data.Common.DataAdapter.Fill(DataTable[] dataTables, IDataReader dataReader, Int32 startRecord, Int32 maxRecords)
+   在 System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   在 WeiXinCqe.OracleOperateHelp.ExecuteDataTable(String connectionString, CommandType cmdType, String cmdText, OracleParameter[] commandParameters) 位置 D:\代码文件\现使用程序代码\WeiXinCqe(M)20190527\WeiXinCqe\class\OracleOperateHelp.cs:行号 106
+   在 WeiXinCqe.OracleOperateHelp.getDataTable(String sql) 位置 D:\代码文件\现使用程序代码\WeiXinCqe(M)20190527\WeiXinCqe\class\OracleOperateHelp.cs:行号 53
+

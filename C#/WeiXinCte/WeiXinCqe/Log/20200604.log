@@ -1,0 +1,98 @@
+[2020-06-04 15:42:36]    获取数据库DataTable失败SQL语句为:SELECT * FROM BASE_CALENDAR  WHERE  STATUS >=3 AND  YYYYMMDD >=TO_DATE('2020-06-04 15:42','YYYY-MM-DD') AND  YYYYMMDD <=TO_DATE('2020-06-05 05:42','YYYY-MM-DD')错误原因:System.Data.OracleClient.OracleException (0x80131938): ORA-01830: date format picture ends before converting entire input string
+
+   在 System.Data.OracleClient.OracleConnection.CheckError(OciErrorHandle errorHandle, Int32 rc)
+   在 System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, Boolean needRowid, OciRowidDescriptor& rowidDescriptor, ArrayList& resultParameterOrdinals)
+   在 System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, ArrayList& resultParameterOrdinals)
+   在 System.Data.OracleClient.OracleCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.OracleClient.OracleCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   在 WeiXinCqe.OracleOperateHelp.ExecuteDataTable(String connectionString, CommandType cmdType, String cmdText, OracleParameter[] commandParameters) 位置 D:\代码文件\现使用程序代码\WeiXinCqe(MS)20200311\WeiXinCqe\class\OracleOperateHelp.cs:行号 106
+   在 WeiXinCqe.OracleOperateHelp.getDataTable(String sql) 位置 D:\代码文件\现使用程序代码\WeiXinCqe(MS)20200311\WeiXinCqe\class\OracleOperateHelp.cs:行号 53
+
+[2020-06-04 15:43:16]    获取数据库DataTable失败SQL语句为:SELECT * FROM BASE_CALENDAR  WHERE  STATUS >=3 AND  YYYYMMDD >=TO_DATE('2020-06-04 15:42','YYYY-MM-DD') AND  YYYYMMDD <=TO_DATE('2020-06-05 05:42','YYYY-MM-DD')错误原因:System.Data.OracleClient.OracleException (0x80131938): ORA-01830: date format picture ends before converting entire input string
+
+   在 System.Data.OracleClient.OracleConnection.CheckError(OciErrorHandle errorHandle, Int32 rc)
+   在 System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, Boolean needRowid, OciRowidDescriptor& rowidDescriptor, ArrayList& resultParameterOrdinals)
+   在 System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, ArrayList& resultParameterOrdinals)
+   在 System.Data.OracleClient.OracleCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.OracleClient.OracleCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   在 WeiXinCqe.OracleOperateHelp.ExecuteDataTable(String connectionString, CommandType cmdType, String cmdText, OracleParameter[] commandParameters) 位置 D:\代码文件\现使用程序代码\WeiXinCqe(MS)20200311\WeiXinCqe\class\OracleOperateHelp.cs:行号 106
+   在 WeiXinCqe.OracleOperateHelp.getDataTable(String sql) 位置 D:\代码文件\现使用程序代码\WeiXinCqe(MS)20200311\WeiXinCqe\class\OracleOperateHelp.cs:行号 53
+
+[2020-06-04 15:46:21]    获取数据库DataTable失败SQL语句为:SELECT * FROM BASE_CALENDAR  WHERE  STATUS >=3 AND  YYYYMMDD >=TO_DATE('2020-06-04 15:45','YYYY-MM-DD') AND  YYYYMMDD <=TO_DATE('2020-06-05 06:45','YYYY-MM-DD')错误原因:System.Data.OracleClient.OracleException (0x80131938): ORA-01830: date format picture ends before converting entire input string
+
+   在 System.Data.OracleClient.OracleConnection.CheckError(OciErrorHandle errorHandle, Int32 rc)
+   在 System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, Boolean needRowid, OciRowidDescriptor& rowidDescriptor, ArrayList& resultParameterOrdinals)
+   在 System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, ArrayList& resultParameterOrdinals)
+   在 System.Data.OracleClient.OracleCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.OracleClient.OracleCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   在 WeiXinCqe.OracleOperateHelp.ExecuteDataTable(String connectionString, CommandType cmdType, String cmdText, OracleParameter[] commandParameters) 位置 D:\代码文件\现使用程序代码\WeiXinCqe(MS)20200311\WeiXinCqe\class\OracleOperateHelp.cs:行号 106
+   在 WeiXinCqe.OracleOperateHelp.getDataTable(String sql) 位置 D:\代码文件\现使用程序代码\WeiXinCqe(MS)20200311\WeiXinCqe\class\OracleOperateHelp.cs:行号 53
+
+[2020-06-04 15:55:28]    获取数据库DataTable失败SQL语句为:SELECT * FROM BASE_CALENDAR  WHERE  STATUS >=3 AND  YYYYMMDD >=TO_DATE('2020-06-04 15:55','YYYY-MM-DD') AND  YYYYMMDD <=TO_DATE('2020-06-05 06:55','YYYY-MM-DD')错误原因:System.Data.OracleClient.OracleException (0x80131938): ORA-01830: date format picture ends before converting entire input string
+
+   在 System.Data.OracleClient.OracleConnection.CheckError(OciErrorHandle errorHandle, Int32 rc)
+   在 System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, Boolean needRowid, OciRowidDescriptor& rowidDescriptor, ArrayList& resultParameterOrdinals)
+   在 System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, ArrayList& resultParameterOrdinals)
+   在 System.Data.OracleClient.OracleCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.OracleClient.OracleCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   在 WeiXinCqe.OracleOperateHelp.ExecuteDataTable(String connectionString, CommandType cmdType, String cmdText, OracleParameter[] commandParameters) 位置 D:\代码文件\现使用程序代码\WeiXinCqe(MS)20200311\WeiXinCqe\class\OracleOperateHelp.cs:行号 106
+   在 WeiXinCqe.OracleOperateHelp.getDataTable(String sql) 位置 D:\代码文件\现使用程序代码\WeiXinCqe(MS)20200311\WeiXinCqe\class\OracleOperateHelp.cs:行号 53
+
+[2020-06-04 15:57:53]    获取数据库DataTable失败SQL语句为:SELECT * FROM BASE_CALENDAR  WHERE  STATUS >=3 AND  YYYYMMDD >=TO_DATE('2020-06-04 15:57','YYYY-MM-DD') AND  YYYYMMDD <=TO_DATE('2020-06-05 12:57','YYYY-MM-DD')错误原因:System.Data.OracleClient.OracleException (0x80131938): ORA-01830: date format picture ends before converting entire input string
+
+   在 System.Data.OracleClient.OracleConnection.CheckError(OciErrorHandle errorHandle, Int32 rc)
+   在 System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, Boolean needRowid, OciRowidDescriptor& rowidDescriptor, ArrayList& resultParameterOrdinals)
+   在 System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, ArrayList& resultParameterOrdinals)
+   在 System.Data.OracleClient.OracleCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.OracleClient.OracleCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   在 WeiXinCqe.OracleOperateHelp.ExecuteDataTable(String connectionString, CommandType cmdType, String cmdText, OracleParameter[] commandParameters) 位置 D:\代码文件\现使用程序代码\WeiXinCqe(MS)20200311\WeiXinCqe\class\OracleOperateHelp.cs:行号 106
+   在 WeiXinCqe.OracleOperateHelp.getDataTable(String sql) 位置 D:\代码文件\现使用程序代码\WeiXinCqe(MS)20200311\WeiXinCqe\class\OracleOperateHelp.cs:行号 53
+
+[2020-06-04 15:58:25]    获取数据库DataTable失败SQL语句为:SELECT * FROM BASE_CALENDAR  WHERE  STATUS >=3 AND  YYYYMMDD >=TO_DATE('2020-06-04 04:58','YYYY-MM-DD') AND  YYYYMMDD <=TO_DATE('2020-06-05 03:58','YYYY-MM-DD')错误原因:System.Data.OracleClient.OracleException (0x80131938): ORA-01830: date format picture ends before converting entire input string
+
+   在 System.Data.OracleClient.OracleConnection.CheckError(OciErrorHandle errorHandle, Int32 rc)
+   在 System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, Boolean needRowid, OciRowidDescriptor& rowidDescriptor, ArrayList& resultParameterOrdinals)
+   在 System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, ArrayList& resultParameterOrdinals)
+   在 System.Data.OracleClient.OracleCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.OracleClient.OracleCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   在 WeiXinCqe.OracleOperateHelp.ExecuteDataTable(String connectionString, CommandType cmdType, String cmdText, OracleParameter[] commandParameters) 位置 D:\代码文件\现使用程序代码\WeiXinCqe(MS)20200311\WeiXinCqe\class\OracleOperateHelp.cs:行号 106
+   在 WeiXinCqe.OracleOperateHelp.getDataTable(String sql) 位置 D:\代码文件\现使用程序代码\WeiXinCqe(MS)20200311\WeiXinCqe\class\OracleOperateHelp.cs:行号 53
+
+[2020-06-04 15:58:45]    获取数据库DataTable失败SQL语句为:SELECT * FROM BASE_CALENDAR  WHERE  STATUS >=3 AND  YYYYMMDD >=TO_DATE('2020-06-04 15:58','YYYY-MM-DD') AND  YYYYMMDD <=TO_DATE('2020-06-05 03:58','YYYY-MM-DD')错误原因:System.Data.OracleClient.OracleException (0x80131938): ORA-01830: date format picture ends before converting entire input string
+
+   在 System.Data.OracleClient.OracleConnection.CheckError(OciErrorHandle errorHandle, Int32 rc)
+   在 System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, Boolean needRowid, OciRowidDescriptor& rowidDescriptor, ArrayList& resultParameterOrdinals)
+   在 System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, ArrayList& resultParameterOrdinals)
+   在 System.Data.OracleClient.OracleCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.OracleClient.OracleCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   在 WeiXinCqe.OracleOperateHelp.ExecuteDataTable(String connectionString, CommandType cmdType, String cmdText, OracleParameter[] commandParameters) 位置 D:\代码文件\现使用程序代码\WeiXinCqe(MS)20200311\WeiXinCqe\class\OracleOperateHelp.cs:行号 106
+   在 WeiXinCqe.OracleOperateHelp.getDataTable(String sql) 位置 D:\代码文件\现使用程序代码\WeiXinCqe(MS)20200311\WeiXinCqe\class\OracleOperateHelp.cs:行号 53
+

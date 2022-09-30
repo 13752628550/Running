@@ -1,0 +1,28 @@
+[2020-02-04 22:44:01]    获取数据库DataTable失败SQL语句为:SELECT TO_CHAR(SYSDATE,'YYYY-MM-DD HH24:MI:SS') AS NOWDATE,TO_CHAR(A.LIMITDATE,'YYYY-MM-DD HH24:MI') AS LIMITDATE,NVL(B.Q1,'') AS Q1,NVL(B.Q2,'') AS Q2,NVL(B.Q3,'') AS Q3,NVL(B.Q4,'') AS Q4,NVL(B.Q5,'') AS Q5,NVL(B.Q6,'') AS Q6,NVL(B.ANSWER1,'') AS ANSWER1,TO_CHAR(B.TIME1,'YYYY-MM-DD') TIME1,TO_CHAR(B.TIME2S,'YYYY-MM-DD') TIME2S,TO_CHAR(B.TIME2E,'YYYY-MM-DD') TIME2E,TO_CHAR(B.TIME3,'YYYY-MM-DD') TIME3,TO_CHAR(B.TIME4,'YYYY-MM-DD') TIME4,TO_CHAR(B.TIME5,'YYYY-MM-DD') TIME5,TO_CHAR(B.TIME6,'YYYY-MM-DD') TIME6 FROM WEIXIN_DVOTE A LEFT JOIN WEIXIN_DVOTE_DETAIL02 B ON A.ID=B.PID AND B.WEIXINID='171601'  WHERE A.ID='21' AND B.STATUS=0错误原因:System.Data.OracleClient.OracleException (0x80131938): ORA-00904: "B"."WEIXINID": invalid identifier
+
+   在 System.Data.OracleClient.OracleConnection.CheckError(OciErrorHandle errorHandle, Int32 rc)
+   在 System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, Boolean needRowid, OciRowidDescriptor& rowidDescriptor, ArrayList& resultParameterOrdinals)
+   在 System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, ArrayList& resultParameterOrdinals)
+   在 System.Data.OracleClient.OracleCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.OracleClient.OracleCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   在 WeiXinCqe.OracleOperateHelp.ExecuteDataTable(String connectionString, CommandType cmdType, String cmdText, OracleParameter[] commandParameters) 位置 D:\代码文件\现使用程序代码\WeiXinCqe(M)20190527\WeiXinCqe\class\OracleOperateHelp.cs:行号 106
+   在 WeiXinCqe.OracleOperateHelp.getDataTable(String sql) 位置 D:\代码文件\现使用程序代码\WeiXinCqe(M)20190527\WeiXinCqe\class\OracleOperateHelp.cs:行号 53
+
+[2020-02-04 22:54:22]    获取数据库DataTable失败SQL语句为:SELECT TO_CHAR(SYSDATE,'YYYY-MM-DD HH24:MI:SS') AS NOWDATE,TO_CHAR(A.LIMITDATE,'YYYY-MM-DD HH24:MI') AS LIMITDATE,NVL(B.Q1,'') AS Q1,NVL(B.Q2,'') AS Q2,NVL(B.Q3,'') AS Q3,NVL(B.Q4,'') AS Q4,NVL(B.Q5,'') AS Q5,NVL(B.Q6,'') AS Q6,NVL(B.ANSWER1,'') AS ANSWER1,TO_CHAR(B.TIME1,'YYYY-MM-DD') TIME1,TO_CHAR(B.TIME2S,'YYYY-MM-DD') TIME2S,TO_CHAR(B.TIME2E,'YYYY-MM-DD') TIME2E,TO_CHAR(B.TIME3,'YYYY-MM-DD') TIME3,TO_CHAR(B.TIME4,'YYYY-MM-DD') TIME4,TO_CHAR(B.TIME5,'YYYY-MM-DD') TIME5,TO_CHAR(B.TIME6,'YYYY-MM-DD') TIME6 FROM WEIXIN_DVOTE A LEFT JOIN WEIXIN_DVOTE_DETAIL02 B ON A.ID=B.PID AND B.WEIXINID='171601'  WHERE A.ID='21' AND B.STATUS=0错误原因:System.Data.OracleClient.OracleException (0x80131938): ORA-00904: "B"."WEIXINID": invalid identifier
+
+   在 System.Data.OracleClient.OracleConnection.CheckError(OciErrorHandle errorHandle, Int32 rc)
+   在 System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, Boolean needRowid, OciRowidDescriptor& rowidDescriptor, ArrayList& resultParameterOrdinals)
+   在 System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, ArrayList& resultParameterOrdinals)
+   在 System.Data.OracleClient.OracleCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.OracleClient.OracleCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   在 System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   在 WeiXinCqe.OracleOperateHelp.ExecuteDataTable(String connectionString, CommandType cmdType, String cmdText, OracleParameter[] commandParameters) 位置 D:\代码文件\现使用程序代码\WeiXinCqe(M)20190527\WeiXinCqe\class\OracleOperateHelp.cs:行号 106
+   在 WeiXinCqe.OracleOperateHelp.getDataTable(String sql) 位置 D:\代码文件\现使用程序代码\WeiXinCqe(M)20190527\WeiXinCqe\class\OracleOperateHelp.cs:行号 53
+
