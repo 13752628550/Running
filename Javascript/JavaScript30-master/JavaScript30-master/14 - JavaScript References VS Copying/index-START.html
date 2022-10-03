@@ -11,7 +11,16 @@
 
     // Let's say we have an array
     const players = ['Wes', 'Sarah', 'Ryan', 'Poppy'];
-
+    const team = players;
+    // team[3]="05433CF1.png";
+    const team2 = players.slice();
+    team2[2]="pingguo";
+    const team3 = Array.from(players);
+    team3[3]="orange";
+    const team4 = [...players];
+    team4[3]="huolongguo";
+    const team5 = [].concat(players);
+    team5[3] = "daxigua";
     // and we want to make a copy of it.
 
     // You might think we can just do something like this:
@@ -41,7 +50,29 @@
       name: 'Wes Bos',
       age: 80
     };
+    const dev= person;
+    // dev.name= "xianggua";
 
+    const dev2 = Object.assign({},person,{name:'pingguo'});
+
+    const dev3 ={...person};
+    dev3.name = "putaoguo";
+
+
+    const author = {
+      name: 'Wes',
+      age: 100,
+      social: {
+        twitter: '@wesbos',
+        facebook: 'wesbos.developer'
+      }
+    };
+
+    const au2 = Object.assign({},author);
+    au2.name ="hahahahahaha";
+    au2.social.twitter="microsoft";
+
+    const au3 = JSON.parse(JSON.stringify(author));
     // and think we make a copy:
 
     // how do we take a copy instead?
@@ -52,5 +83,7 @@
 
   </script>
 
+
 </body>
+
 </html>
