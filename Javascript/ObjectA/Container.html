@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        .Container {
+            display: grid;
+            grid-template-rows: 60px 60px 60px;
+            grid-template-columns: 90px 90px 90px;
+            grid-template-areas:"header header header"
+            "main main main"
+            "footer footer footer";
+            align-items:center;
+            justify-items: center;
+            /* grid-auto-flow: row; */
+            
+        }
+        .Container>div:nth-child(2n) {
+            background-color: orange;
+            border: 6px hotpink solid;
+
+        }
+        .Container>div:nth-child(2n+1) {
+            background-color:hotpink;
+            border: 7px orange solid;
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="Container">
+        
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+       
+        <div>6</div>
+        <div>7</div>
+        <div>8</div>
+        <div>9</div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>
