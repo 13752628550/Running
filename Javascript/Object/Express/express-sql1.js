@@ -1,9 +1,9 @@
 const express = require('express');
 const mysql = require('mysql');
 const db = mysql.createPool({
-    host: '172.26.32.199',
+    host: '172.26.32.136',
     user: 'root',
-    password: 'root@mysql',
+    password: 'mysql.sys',
     database: 'my_db_01'
 })
 db.query('select * from users', (err, result) => {
