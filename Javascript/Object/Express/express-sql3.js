@@ -72,8 +72,8 @@ const db = mysql.createPool({
     protocol: 'mysql'
 });
 const sqlstr = 'update users set status=? where id=?';                         // 通过占位符设置条件                     
-db.query(sqlstr, [1, 6], (err, results) => {                                    // 通过数据更新设条件              
-    if (err) return console.log(err.message);                                  // 当然能够通过数组设               
+db.query(sqlstr, [1, 6], (err, results) => {                                   // 通过数据更新设条件                    
+    if (err) return console.log(err.message);                                  // 当然能够通过数组设                        
     if (results.affectedrows === 1) console.log("删除数据成功！");
 
 

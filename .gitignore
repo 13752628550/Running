@@ -1,6 +1,8 @@
 # User-specific folders
 大前端知识图谱/
+node_modules/
 # User-specific files
-
-
+*.tmp
+*.Log
+*.tlh
 
