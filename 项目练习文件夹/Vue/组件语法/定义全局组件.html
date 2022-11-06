@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>组件相关语法</title>
+    <script src="https://unpkg.com/vue@next"></script>
+</head>
+<body>
+    <div id="root"></div>
+
+</body>
+<script>
+    const app = Vue.createApp({
+        template:`
+            <div>
+                <counter-parent />
+                <counter/>
+                <counter/>
+                <counter/>
+            </div>`,
+    });
+    
+    // app.component('hello',{
+    //     template:'<div>helloaaa</div>',
+    // });
+    // app.component('world',{
+    //     template:'<div>worldaaa</div>',
+    // })
+
+    app.component('counter',{
+        data(){
+            return {
+                count:1,
+            }
+        },
+        template:`<div @click="count+=1">{{count}}</div>`,
+    })
+    
+    
+    
+    app.component('counter-parent',{
+        template:`<div> <counter/> </div>`,
+    })
+    
+    const vm = app.mount('#root');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+</html>
