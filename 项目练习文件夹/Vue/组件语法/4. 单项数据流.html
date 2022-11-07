@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@next"></script>
+</head>
+<body>
+    <div id="root"></div>
+</body>
+<script>
+ 
+/* ****************************************************************
+ *	单项数据流 
+ *  子组件接收属性后，不能进行修改，只能用新变量修改
+ *  子组件：data(){ return{新变量：this.属性名} }                     
+* ****************************************************************/
+    // const app = Vue.createApp({
+    //     data(){
+    //         return{
+    //             num:1,
+
+    //         }
+    //     },
+    //     template:`<div><counter :count="num"/></div>`
+    // });
+    // app.component('counter',{
+    //     data(){
+    //         return{ myCount: this.count,}                      // 父组件属性不能修改，添加新变量接收父组件
+    //     },
+    //     props:['count'],                                 
+    //     template:`<div @click ="myCount+=1">{{myCount}}</div>`
+    // })
+    // const vm = app.mount('#root');
+
+
+
+
+
+
+/* ****************************************************************
+ *	Non-prop  
+ *  inheriAtttis：false           // 不继承父组件属性
+ *  v-bind="$attrs"               // 继承父组件所有属性                   
+ *  v-bind:属性名= "$attrs.msg"    // 继承父组件指定属性           
+ *  this.$attrs                    // 取得父组件属性名称           
+ * ****************************************************************/
+    const app = Vue.createApp({
+        template:`
+            <div>
+                <counter msg = "hello" msg1="world">
+            </div>
+        `,
+    });                              
+    app.component('counter',{
+        inheritAttrs: false,                              // inheritAttrs 不继承父组件属性 
+        template:`
+            <div> Counter </div>
+            <div v-bind="$attrs"> Counter </div>           
+            <div v-bind:msg="$attrs.msg"> Counter </div>
+        `,                                                 // v-bind = "$attrs"                     继承父组件所有属性
+    });                                                    // v-bind:属性名 = "$attrs.属性名"        继承父组件指定属性
+    const vm = app.mount('#root');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+</html>
