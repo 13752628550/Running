@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@next"></script>
+</head>
+<body>
+    <div id="root"></div>
+    <script>
+        const app = Vue.createApp({
+            data(){
+                return{counter:0,}
+            },
+            methods:{
+                handleBtnClick(num,event){
+                    console.log(event.target);
+                    this.counter += num;
+                },
+                handleDivClick(){
+                    alert('div clicked')
+                
+                },
+            },
+            template:`
+                {{counter}}
+                <div @click = "handleDivClick">                                         // 事件修饰符
+                    <button @click="handleBtnClick(3,$event)" >button</button>          // Javascript 默认数 event
+                    <button @click.stop="handleBtnClick" >button</button>               // stop: 停止事件冒泡
+                    <button @click.self="handleBtnClick" >button</button>               // self: 停止向下触发
+                    <button @click.prevent="handleBtnClick" >button</button>            // prevent: 阻住默认行为   
+                    <button @click.once="handleBtnClick" >button</button>               // once: 事件只执行一次   
+                    <button @scroll.passive="handleBtnClick" >button</button>           // passive: 提升滚动性能  
+                </div>
+                <div>                                                                   // 按键修饰符 
+                    <input @keydown.enter = "handleKeydownClick" />                     // enter: 按回车键触发
+                    <input @keydown.tab = "handleKeydownClick" />                       // tab: 按下 TAB 键触发
+                    <input @keydown.delete = "handleKeydownClick" />                    // delete: 按下删除键触发 
+                    <input @keydown.esc = "handleKeydownClick" />                       // esc: 按下 ESC 键触发
+                    
+                    <input @keydown.up = "handleKeydownClick" />                        // up: 按下 UP 键触发   
+                    <input @keydown.down = "handleKeydownClick" />                      // down: 按下 DOWN 键触发  
+                </div>
+                <div>                                                                   // 鼠标修饰符 
+                    <button @click.left="handleMouseClick" >button</button>             // left: 点击鼠标左键  
+                    <button @click.right="handleMouseClick" >button</button>            // left: 点击鼠标右键   
+                    <button @click.middle="handleMouseClick" >button</button>           // left: 点击鼠标中键    
+                </div>
+                
+            `,
+        });
+        
+        const vm = app.mount("#root");
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@next"></script>
+</head>
+<body>
+    <div id="root"></div>
+<script>
+/* *************************************************************************************************************
+ *	原语法: <input v-model:value = "message" /> 
+ *	简写法: <input v-model = "message" /> 
+ *  复选框: <input type="checkbox" v-model="chkval" />                      // chkval: true/false          
+ *  多复选框: <input type="checkbox" v-model="chkval" value="标签名" />      // chkval: [value,value]        
+ *  radio按钮: <input type="radio" v-model = "chkval" value="标签名" />      // chkval: "选择标签名"         
+ *  select标签: <select v-model = "chkval">                                  // chkval: "Option选择数据"
+ * 
+ * 
+ *  
+ * *************************************************************************************************************/
+    
+    const app = Vue.createApp({
+        data(){
+            return {
+                message:'hello',
+                chkval:true,
+                mulchkval:[],
+                radchkval:'',
+                selchkval:'A',
+            }
+        
+        },
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        template:`
+            <div>
+                <input v-model = "message" />                                         // 文本框
+                <textarea v-model = "message" />                                      // 多行文本框
+                <input type = "checkbox" v-model = "chkval">                          // 单选 checkbox
+                <input type = "checkbox" v-model = "mulchkval" value = "选择一">       // 多选 checkbox
+                <input type = "checkbox" v-model = "mulchkval" value = "选择二"> 
+                <input type = "checkbox" v-model = "mulchkval" value = "选择三"> 
+                <input type = "radio" v-model = "radchkval" value = "选择一">          // radio 选择按钮
+                <input type = "radio" v-model = "radchkval" value = "选择二"> 
+                <input type = "radio" v-model = "radchkval" value = "选择三"> 
+                <select v-model = "selchkval">
+                    <option>A</option>
+                    <option>B</option>
+                    <option>C</option>
+                <select/>
+                 
+            </div>
+        `
+    })
+    const vm = app.mount("#root");
+</script>    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

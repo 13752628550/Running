@@ -5,8 +5,85 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="https://unpkg.com/vue@next"></script>
+    
 </head>
 <body>
+    <div id="root"></div>
+    <script>
+        /* *****************************************************************
+         *  概念： 根据数据，自动进行计算，多用于数值计算                                                       
+         *  语法： computed:{}                         
+         *  其他： 当计算属性，依赖内容发生变化，才会重新计算     
+         * *****************************************************************/
+            const app = Vue.createApp({
+                data(){
+                    return {
+                        count:3,
+                        price:6,
+                    
+                    }
+                },
+                computed:{
+                    totalSum(){
+                        return this.count * this.price
+                    },
+                },
+                template:`<div>{{totalSum}}</div>`,
+            })
+            const vm = app.mount("#root")
+        </script>
+
+
     
-</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>    
+
 </html>

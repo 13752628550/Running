@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>v-on</title>
+    <script src="https://unpkg.com/vue@next"></script>
+</head>
+<body>
+    <div id="root"></div>
+    <script>
+    /* ************************************************************************
+    *	作用: 能够循环打印数组和对象  
+    *	数组: v-for= "(item,index) in listsArray" :key="index"  
+    *   对象: v-for = "(value,key,index) in listsObject"          
+    *	修改数组方法1: push, pop, shift, unshift, splice, sort, reverse
+    *   修改数组方法2: this.listArray = ['hello','world']
+    *   循环显示数字:  v-for = "item in 10"
+    * *************************************************************************/
+        const app = Vue.createApp({
+                data(){
+                    return {
+                        
+                        listArray:['dell','lee','teacher'],                  // 数组
+                        listObject:{
+                            firstName:'dell',
+                            lastName:'lee',
+                            job:'teacher',
+                        }
+                    }
+                },
+                methods:{
+                    handleAddBtnClick(){
+                        this.listArray.push('hello')
+                    }
+                },
+                template:`
+                    <div v-for = "(item,index) in listArray" :key="index">                // 循环显示数组
+                        {{item}} -- {{index}}
+                    </div>
+                    
+                    
+                    <div v-for = "(value,key,index) in listObject" :key="index">          // 循环显示对象           
+                        {{value}} -- {{key}} -- {{index}}
+                    </div>
+                    <button @click = "handleAddBtnClick">新增</button>
+                
+                    `,
+                
+            });
+        
+            
+
+            const vm = app.mount('#root');                                                              
+                                                                       
+                                                                                  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+   
+</body>
+
+</html>

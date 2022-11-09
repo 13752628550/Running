@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>v-on</title>
+    <script src="https://unpkg.com/vue@next"></script>
+</head>
+<body>
+    <div id="root"></div>
+    <script>
+    /* *************************************************************
+    *	作用: 根据变量来展示隐藏元素  
+    *	语法: v-show:= true/false             
+    *	注解: 元素隐藏时，display:none
+    * *************************************************************/
+        const app = Vue.createApp({
+                data(){
+                    return {
+                        show:false,
+                    }
+                },
+
+                template:`
+                    <div v-if="show">hello world</div>
+                    <div v-show="show">nihao world</div>
+                `,
+                
+            });
+        
+            const vm = app.mount('#root');
+                                                              
+                                                                       
+                                                                                  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

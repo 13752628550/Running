@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .red{
+            color:red;
+        }
+        .green{
+            color:green;
+        }
+    </style>
+    <script src="https://unpkg.com/vue@next"></script>
+</head>
+</head>
+<body>
+    <div id="root"></div>
+    <script>
+        
+        
+        
+        /* ****************************************************************************
+         *  修改样式方式  
+         *    1. 字符串: <div :class = "classString"> Hello World </div>
+         *    2. 对象:   classObject:{red:true,green:true}       // 在data()中声明对象                       
+         *    3. 数组:   classArray:['red','green']              // 在data()中声明数组
+         *    4. 行内样式: 字符串形式、对象形式                    // 建议在模板中使用    
+         * ****************************************************************************/
+            const app = Vue.createApp({
+                data(){return{
+                    classString:"red",                               // 定义 class 字符串
+                    classObject:{red:true,green:true},               // 定义 class 中对象
+                    classArray:['red','green'],                      // 定义 class 中数组
+                }},
+                template:`
+                    <div :class = "classString">Hello World</div>    // 字符串修改方式
+                    <div :class = "classObject" >Hello World</div>   // 对象方式修改      
+                    <div :class = "classArray">Hello World</div>     // 数组方式修改         
+                    
+                    `,
+            });
+            
+            const vm = app.mount("#root");             
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

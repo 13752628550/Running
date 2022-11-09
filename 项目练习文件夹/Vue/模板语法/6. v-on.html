@@ -11,10 +11,22 @@
     <div id="root"></div>
 </body>
 <script>
+/* *************************************************************
+ *	原语法: v-on:click="handleClcik(arg,$event)"  
+ *	简写法: @click = "handleClcik(arg,$event)"           
+ *	动态事件: @[event] = "handleClick"
+ *  事件修饰符: @click.修饰符
+ *  按键修饰符: @keydown.修饰符
+ *  鼠标修饰符: @click.修饰符
+ *  精确修饰符: @click.ctrl.exact
+ * *************************************************************/
+   
+ 
     const app = Vue.createApp({
         data(){
             return {
                 message:"hello world",
+            
             }
         },
         methods:{
@@ -24,36 +36,24 @@
         
     });
    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     const vm = app.mount('#root');
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
