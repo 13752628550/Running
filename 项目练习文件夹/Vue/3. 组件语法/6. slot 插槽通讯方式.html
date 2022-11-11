@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@next"></script>
+</head>
+<body>
+    <div id="root"></div>
+    <script>
+    /* *******************************************************************************
+    *  场景: 父组件给子组件指定位置插入HTML 结构
+    *  适用于: 父组件 -> 子组件                                                  
+    *   1. 默认插槽
+    *       父组件: <子组件> html 结构 </子组件>      
+    *       子组件: <slot> default value </slot>
+    *  
+    *   2. 具名插槽: 
+    *       作用:   组件中能够设置多个插槽,父组件中写 <template> 来填充插槽
+    *       父组件: <template v-slot = 插槽名> <子组件></子组件> </template>
+    *       子组件: <slot name = 插槽名> </slot>
+    *   
+    *   3. 作用与插槽 
+    *       作用:   子组件具体标签输出，由父组件来判断时，能够作用域插槽
+    *       父组件: <子组件 v-slot = 变量名> <变量名.item> </子组件>
+    *       子组件: <slot v-for = "item in list" :item = "item"> </子组件>                               
+    * *********************************************************************************/
+    // 默认插槽代码
+        // const app = Vue.createApp({
+        //     template:`
+        //         <myform > <div>提交</div> </myform>
+        //         <myform > <button>提交</button> </myform>
+        //     `
+        // });
+        // app.component('myform',{
+        //     methods:{ handleClick(){ alert('123'); } },
+            
+            
+            
+           
+        //     template:`
+        //         <div>
+        //             <input />
+        //             <span @click ="handleClick"> <slot> </slot> </span>
+        //         </div>
+        //     `
+        // });
+        // const vm = app.mount("#root");
+
+    // 具名插槽代码
+        // const app = Vue.createApp({
+        //     template:`
+        //         <layout> 
+        //             <template #header>                           // 具名插槽简写方式
+        //                 <div> header </div>
+        //             </template>
+        //             <template v-slot:footer>
+        //                 <div> footer </div> 
+        //             </template>
+        //         </layout>
+        //     `
+        // });
+        // app.component('layout',{
+        //     template:`
+        //         <slot name = header></slot>
+        //         <div>content</div>
+        //         <slot name = "footer"></slot>
+        //     `,
+        // })
+        // const vm = app.mount("#root");
+    // 作用域插槽代码
+        const app = Vue.createApp({
+            template:`
+                    <list v-slot = "slotProps">
+                        <div>{{slotProps.item}}</div>
+                    </list>
+            `
+        });
+        app.component('list',{
+            data(){
+                return {
+                    list:[1, 2, 3],
+                }
+            },
+            template:`
+                <div>
+                    <slot v-for ="item in list" :item = "item"></slot>
+                </div>
+            `,
+        });
+        
+        const vm = app.mount("#root");    
+    </script>
+ 
+</body>
+
+</html>

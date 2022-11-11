@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@next"></script>
+</head>
+<body>
+    <div id="root"></div>
+     <script>
+        /* *************************************************************
+        *  适用于: 在组件中插入公共 js 脚本 
+        *  优先级: 组件优先级高于 Mixin 混入优先级
+        *  子组件混入: mixins:[定义脚本名称]            // vue3不推荐                       
+        *  在全局混入: app.mixin(混入脚本名称)          // 不推荐使用全局                           
+        * *************************************************************/
+        //局部混入
+            // const myMixin = {
+            //     data(){ return { number2: 222 } }
+            // }
+
+            
+            // const app = Vue.createApp({
+            //     data(){ return { number:1 } },
+            //     mixins:[myMixin],
+            //     methods:{ handleClick(){ console.log('handleClick') } },
+            //     template:`
+            //         <div>
+            //             <div>{{number}}</div>
+            //             <div> Mixin: {{number2}} </div>
+            //             <button @click = "handleClick">增加</button>
+            //         </div>
+            //     `
+            // })
+
+            // const vm = app.mount("#root");
+
+        
+        
+        
+        //全局混入       
+            const myMixin = {
+                data(){ return { number2: 222 } }
+            }
+            const app = Vue.createApp({
+                data(){ return { number:1 } },
+                methods:{ handleClick(){ console.log('handleClick') } },
+                template:`
+                    <div>
+                        <div>{{number}}</div>
+                        <div> Mixin: {{number2}} </div>
+                        <button @click = "handleClick">增加</button>
+                    </div>
+                `
+            });
+            app.mixin(myMixin);
+            const vm = app.mount("#root");
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>
