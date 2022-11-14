@@ -1,32 +1,28 @@
 <template>
   <div>
-    <input type="text">
+    <input type="text" />
     <button>提交</button>
   </div>
-  <ul>
-    <li>123123</li>
-  </ul>
 </template>
 
 <script>
 export default {
-  name: 'AppTODOLis',
-
-}
+  name: "AppTODOLis",
+};
 </script>
 
 <style>
-  *{
-    padding: 0;
-    margin: 0;
-  }
-  
-  
-  li{
-    list-style: none;
-    padding: 0 10px;
-  }
-  div{
-    padding: 10px;
-  }
+* {
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  list-style: none;
+  padding: 0 10px;
+}
+
+div {
+  padding: 10px;
+}
 </style>
