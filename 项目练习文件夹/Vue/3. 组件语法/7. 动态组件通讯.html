@@ -9,5 +9,25 @@
 </head>
 <body>
     <div id="root"></div>
+    <script>
+        /* ******************************************************************************************
+        *  
+        * *******************************************************************************************/
+        const app = Vue.createApp({
+            template:`
+                <input-item />
+                <common-item />
+            `
+        });
+        app.component('input-item',{
+            template:`<input />`
+        
+        })
+        app.component('common-item',{
+            template:`<div>hello world</div>
+            `
+        })
+        const vm = app.mount("#root")
+    </script>
 </body>
 </html>
