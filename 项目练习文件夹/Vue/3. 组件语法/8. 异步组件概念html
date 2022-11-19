@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@next"></script>
+</head>
+<body>
+    <div id="root"></div>
+    <script>
+        /* ***********************************************************************************************
+        *  动态组件：动态渲染组件，实现组件自动变更
+        *  父组件： <component :is = "变量" />      // data 中记录变量，内容为组件名称，在事件中变更组件名
+        *  子组件： 正常定义就行                                    
+        * ************************************************************************************************/
+        const app = Vue.createApp({
+            data(){
+                return{
+                    showComp:"input-item"
+                }
+            },
+            
+            template:`
+                <component :is="showComp" />
+                <button @click = "switchCom">switch component </button>
+            `,
+            methods:{
+                switchCom(){
+                    this.showComp = this.showComp==="common-item"?"input-item":"common-item";
+                }
+            }
+        });
+        app.component('input-item',{
+            template:`<input />`
+        
+        })
+        app.component('common-item',{
+            template:`<div>hello world</div>
+            `
+        
+        })
+        const vm = app.mount("#root")
+
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>
