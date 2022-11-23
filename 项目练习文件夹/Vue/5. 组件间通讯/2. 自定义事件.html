@@ -11,30 +11,31 @@
     <div id="root"></div>
 </body>
 <script>
-    /* ************************************************************************************
+    /* ********************************************************************************************
     *  通信方式: 父子通信
     *   
     *   1. 自定义事件 (子向父)
-    *      父组件：<父组件 @事件名="callback($event,params)">      // 能够通过在 methods 中定义
+    *      父组件：<子组件 @事件名="callback(params,...params)">    // 能够通过在 methods 中定义  
     *      子组件： emmit:['事件名']                               // 这只是帮助记能不写 
-    *              this.$emit("事件名",$event,params,params)      // 执行父组件事件通讯       
-    * 
-    * **************************************************************************************/              
+    *              this.$emit("事件名",params,params)             // 执行父组件事件通讯       
+    *              this.$off("事件名")                            // 解绑自定义事件
+    *              this.$destroy()                                // 释放当前组件实例
+    * *********************************************************************************************/              
         const app = Vue.createApp({
             
             data(){ return { count:1, }; },
             methods:{
-                handleAdd(param1,param2){                               // 定义父组件事件
-                    this.count += param1;
+                handleAdd(param){                               // 定义父组件事件
+                    console.log(param);
+                    this.count += param;
                 }
             },
             template:`
                 <div>
-                    <counter :count ="count" @add="handleAdd"/>    
+                    <counter :count ="count" @add="handleAdd"/>  // 监听父组件事件  
                 </div>
-            `,                                                 // 监听父组件事件
+            `,                                                 
         });                              
-        
         app.component('counter',{
             emmit:['add'],                                        // 父组件事件名称，能够醒目标识提醒
             props:['count'],
@@ -42,12 +43,18 @@
             
             methods:{
                 handleClick(){
-                this.$emit('add', 2, 3);                       // 执行父组件事件
+                    this.$emit('add',3);                                  // 执行父组件事件
+                },
+                handleClick1(){
+                    this.$destroy();                                     // 解绑当前组件实例
                 }
             },
 
             template:`
-                <div @click = "handleClick"> {{count}} </div>                           
+                <div> {{count}}   
+                    <button @click = "handleClick"> submit </button>
+                    <button @click = "handleClick1"> uninstall </button>
+                </div>                           
             `,                                                 
         });                                                           
         
@@ -76,14 +83,7 @@
 
 
 
-
-
-
-
-
-
-
-
+        
 </script>
 
 </html>

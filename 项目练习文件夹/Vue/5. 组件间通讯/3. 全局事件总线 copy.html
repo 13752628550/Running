@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@next"></script>
+</head>
+<body>
+    <div id="root"></div>
+</body>
+<script>
+    /* **************************************************************************************************
+    *  通信方式: 任意组件间通信
+    *   
+    *   1. 全局事件总线 (任意组件)
+    *      全局X：beforeCreate(){ 
+    *               Vue.prototype.$bus = this          
+    *             }                                                                     
+    *      A组件：<父组件 @事件名="callback($event,params)">      
+    *      B组件： emmit:['事件名']                                
+    *              this.$emit("事件名",$event,params,params)             
+    * 
+    * ***************************************************************************************************/              
+        
+                
+        const app = Vue.createApp({
+            data(){
+                return{
+
+                };
+            },
+            template:`
+                <A> </A>
+                <B> </B>
+            `,
+            beforeCreate(){
+                          
+            },
+        });
+        
+        app.component('A',{
+            data(){
+                return {
+                    datacomA: 'StringA',
+                    datacomB: ''
+                };
+            
+            },
+            template:`
+                <h2> A 组件数据: {{datacomA}} B组件发送数据：{{datacomB}}</h2>
+            `,
+            methods:{
+
+            },
+            mountes(){
+                // this.$bus.$on('updateA',(data)=>{
+                //     this.datacomB = data;
+                // })
+                console.log(this.globalProperties);
+            }
+           
+        });
+        app.component('B',{
+            data(){
+                return {
+                    datacomB: 'StringB'
+                };
+            },
+            template:`
+                <h2> B 组件数据: {{datacomB}}</h2>
+                <button @click = Update> 更新 A 兄弟组件数据 </button> 
+            `,
+            methods:{
+                Update(){
+                    // this.globalProperties.$bus.$emit('updateA')
+                    console.log(this);
+                }
+            },
+        });
+
+        app.config.globalProperties.$bus = {a:1,b:2};             // 将当前 vm 作为全局事件总线挂载到 Vue 原型对象上 => 所有组件都能看到他
+        const vm = app.mount("#root");
+
+        
+</script>           
+        
+</html>

@@ -110,8 +110,9 @@
     const app = Vue.createApp({
             data(){ return { count:1, }; },
             methods:{
-                handleAdd(param1,param2){                               // 定义父组件事件
-                    this.count += param1;
+                handleAdd($event,param2){                               // 定义父组件事件
+                    console.log($event);
+                    this.count += param2;
                 }
             },
             template:`
@@ -126,7 +127,7 @@
             props:['count','add'],
             emmit:['handleAdd'],                                        // 父组件事件名称，能够醒目标识提醒
             template:`
-                <div @click = "add(3)"> {{count}} </div>                           
+                <div @click = "add($event,3)"> {{count}} </div>                           
             `,                                                 
         });                                                           
         

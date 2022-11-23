@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@next"></script>
+</head>
+<body>
+    <div id="root"></div>
+    <script>
+        /* **************************************************************************************************
+        *  通信方式: 父子通信
+        *   
+        *   1. v-model (父向子 子向父)
+        *      应用：                               
+        *      父组件：<父组件 @事件名="callback($event,params)">      
+        *      子组件： emmit:['事件名']                                
+        *              this.$emit("事件名",$event,params,params)             
+        * 
+        * ***************************************************************************************************/              
+                    
+            
+            const app = Vue.createApp({
+                data(){
+                    return{
+                        msg:"hello world"
+                    };
+                },
+                template:`
+                    <custom-input :value = "msg" @input = "custominp"> </custom-input>
+                `,
+                methods:{
+                    custominp(){
+                        msg = $event.target.value;
+                    }
+                },
+            });
+            
+            
+            
+            app.component('custom-input',{
+                props:['value'],
+                template:`
+                    <input type ="text" :value ="value" @input ="inputval" />
+                `,
+                methods:{
+                    inputval(){
+                        this.$emit('input',"$event.target.value")
+                    }
+                }
+            });
+            
+            const vm = app.mount("#root");
+    
+            
+    </script> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+        
+</html>
