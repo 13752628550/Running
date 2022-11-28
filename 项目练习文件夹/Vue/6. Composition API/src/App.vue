@@ -2,71 +2,71 @@
   <h1>information</h1>
   <h2>姓名:{{name}}</h2>
   <h2>年龄:{{age}}</h2>
-  <button @click = "sayHello">发信息</button>
+  <h3>工作种类：{{job.type}}</h3>
+  <h3>工作薪水：{{job.salary}}</h3>
+  <button @click = "changeInfo">修改人员信息</button>
 </template>
 
 <script>
 /* ***********************************************************************************
- *  ref() 函数
- *      概念：Vue3.0 新语法 值为一个函数，setup 是所有 Composition API (组合API) 配置口
- *      语法：export default{
- *                      setup(){
- *                        ...          // 定义属性方法
- *                        return{}     // 定义属性方法返回
- *                      }
- *            }                                           
+ *  定义响应式数据
+ *
+ *   1. ref() 函数
+ *      概念：定义响应式数据
+ *      引用：import {ref} from 'vue'
+ *      语法：const xxx = ref(initValue)         // 响应式数据
+ *            xxx.value                         // js 中操作数据             
+ *            <div>{{xxx}}</div>                // 模板中操作数据
+ *            
+ *            const xxx = ref({ aaa:'abc' })    // 响应式对象            
+ *            xxx.value.aaa                     // js 中操作对象
+ *            <div>{{xxx.aaa}}</div>            // 模板中操作对象
  *      
- *      两种返回值：
- *          1.对象：    则对象中属性、方法，在模板中均可直接使用
- *          2.渲染函数：能够自定义渲染函数，此方法了解就行，日常不会经常用
+ *    2. reactive() 函数    
+ *       概念：定义响应式对象
+ *       引用：import {reactive} from 'vue'   
+ *       语法：const xxx = reactive({ aaa:'abc' })   // 响应式对象      
+ *             xxx.aaa                              // js 中操作对象      
+ *             <div>{{xxx.aaa}}</div>               // 模板中操作对象        
  * ***********************************************************************************/
   
-  
+ import {ref,reactive} from 'vue' 
  export default {
     name: 'App',
     setup() {
       
       //数据
-      let name = '张三'
-      let age = 18
+      let name = ref('张三')
+      let age = ref(18)
+      
+      
+      let job = reactive({
+        type:'前端工程师',
+        salary:'30k'
+      })
+
+      
       
       //方法
-      function sayHello(){
-        console.log(`我叫${name}，我${age}岁了，你好啊！`);
+      function changeInfo(){
+        name.value ='赵六'
+        age.value ='65'
+        job.type = 'UI设计师'
+        job.salary = '60k'
       }
 
       return{
         name,
         age,
-        sayHello
-      
+        job,
+        changeInfo
       }
+    
     }
   }
 
 
 </script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
