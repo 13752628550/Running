@@ -10,7 +10,7 @@
  *  setup
  *      概念：Vue3.0 新语法 值为一个函数，setup 是所有 Composition API (组合API) 配置口
  *      语法：export default{
- *                      setup(){
+ *                      setup(props,context){ 
  *                        ...          // 定义属性方法
  *                        return{}     // 定义属性方法返回
  *                      }

@@ -12,7 +12,7 @@
 </template>
   
 <script>
-  import {ref,reactive,watch,watchEffect} from 'vue'
+  import {ref,reactive,watch} from 'vue'
   export default {
     name: 'HelloWorld',
     setup(){
@@ -23,12 +23,22 @@
         age:89
       
       })
-      
-      watchEffect(()=>{
-        const x1 = sum.value
-        const x2 = person.age
-        console.log('watchEffect 指定函数执行了');
+      watch([sum,msg],(newValue,oldValue)=>{
+        console.log('sum 发生变化了',newValue,oldValue);
+        },{
+          immediate:true,            // 初始就执行测试
       })
+      watch(person,(newValue,oldValue)=>{
+        console.log('person 发生变化了',newValue,oldValue);
+      },{
+          immediate:true,            // 响应式对象
+      })
+      watch(()=>person.age,(newValue,oldValue)=>{
+        console.log('person 发生变化了',newValue,oldValue);
+      },{
+          immediate:true,            // 监测某个属性
+      })
+
       
       return({
         sum,msg,person
@@ -72,18 +82,8 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 
-<style scoped>
+ <style scoped>
 
 </style>
