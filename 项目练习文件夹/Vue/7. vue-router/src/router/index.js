@@ -8,15 +8,77 @@ const router = createRouter({
         },
         {
             path: '/about',
-            component: () => import('../pages/about')
+            component: () => import('../pages/about'),
+            children: [
+                {
+                    path: 'news',
+                    component: () => import('../pages/news'),
+                },
+                {
+                    path: 'message',
+                    component: () => import('../pages/message'),
+                }
+            ]
         },
         {
+
             path: '/login',
             component: () => import('../pages/login')
         },
     ],
 
 })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
