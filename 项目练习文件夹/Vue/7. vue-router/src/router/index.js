@@ -13,24 +13,24 @@ const router = createRouter({
                 {
                     path: 'news',
                     component: () => import('../pages/news'),
+                    name: 'news'
                 },
                 {
                     path: 'message',
                     component: () => import('../pages/message'),
+                    name: 'message'
                 }
             ]
+
         },
         {
-
             path: '/login',
-            component: () => import('../pages/login')
+            component: () => import('../pages/login'),
+            name: "login"
         },
     ],
 
 })
-
-
-
 
 
 

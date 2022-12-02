@@ -17,11 +17,13 @@
   export default {
     name: 'App',
     components: {
+    },
+    setup(){
     }
   }
+
 </script>
 <style>
-  
   *{
     padding: 0;
     margin: 0;
@@ -37,15 +39,12 @@
     -moz-osx-font-smoothing: grayscale;
     text-align: center;
     color: #2c3e50;
-    /* margin-top: 60px; */
+    
   }
-  
-  
   .msgbox{
     display: flex;
     flex-direction: row;
   }
-  
   .left{
     display: flex;
     flex-direction: column;
@@ -58,9 +57,6 @@
   a{
     text-decoration: none
   }
-  /* .left button:hover{
-    background-color: aliceblue;
-  } */
   .active{
     background-color:hotpink;
     color: aliceblue;
@@ -71,6 +67,8 @@
     background-color: grey;
   }
   
+
+
 
 
 
