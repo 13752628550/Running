@@ -1,12 +1,10 @@
 <template>
   <div>
-    <router-link to="/about/news" class="operation">news</router-link>
-    <button @click="btnClick" active-class="active">message</button>
+    <button @click="query"> query </button>
+    <button @click="params">params</button>
     <div>
       <router-view> </router-view>
     </div>
-    about
-    <!-- <router-link @click="btnClick"  class="operation"> message </router-link> -->
   </div>
 </template>
 <script>
@@ -15,21 +13,30 @@
     name:'about',
     setup(){
       const router = useRouter()
-      const btnClick = ()=>{
+      const query = ()=>{
         router.push({
-          name:"message",
+          path:"/about/query",
           query:{
             key:"abcdefgh",
             name:"zhang",
-            
             age:"89"
           }
+        
         })   
       }
-      return{btnClick}
+      const params =()=>{
+        router.push({
+          name:'params',
+          params:{
+            id:89,
+            val:'params',
+            str:"parstrfgh"
+          }
+        })
+      }
+      return{query,params}
     }
   }
-
 </script>
 
 
@@ -76,14 +83,8 @@
 
 
 
-
-
-
-
-
-
 <style scoped>
-  .operation{
-    padding: 33px;
+  button{
+    margin: 33px;
   }
 </style>

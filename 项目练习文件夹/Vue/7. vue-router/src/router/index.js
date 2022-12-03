@@ -11,20 +11,20 @@ const router = createRouter({
             component: () => import('../pages/about'),
             children: [
                 {
-                    path: 'news',
-                    component: () => import('../pages/news'),
-                    name: 'news'
+                    path: 'query',
+                    component: () => import('../pages/query'),
+                    name: 'query'
                 },
                 {
-                    path: 'message',
-                    component: () => import('../pages/message'),
-                    name: 'message'
+                    path: 'params/:id/:val/:str',
+                    component: () => import('../pages/params'),
+                    name: 'params'
                 }
             ]
 
         },
         {
-            path: '/login',
+            path: '/login/:id/:title',
             component: () => import('../pages/login'),
             name: "login"
         },
