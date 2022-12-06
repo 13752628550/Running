@@ -30,7 +30,7 @@
           params:{
             id:89,
             val:'params',
-            str:"parstrfgh"
+            str:"parstr"
           }
         })
       }

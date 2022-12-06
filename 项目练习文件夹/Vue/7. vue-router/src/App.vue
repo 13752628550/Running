@@ -4,8 +4,8 @@
     <div class = msgbox>
       <div class="left">
         <router-link active-class="active" to="/">index</router-link>
-        <router-link active-class="active" to="/login/89/title">login</router-link>
         <router-link active-class="active" to="/about">about</router-link>
+        <router-link active-class="active" to="/login">login</router-link>
       </div>
       <div class="bottom">
         <router-view ></router-view>
