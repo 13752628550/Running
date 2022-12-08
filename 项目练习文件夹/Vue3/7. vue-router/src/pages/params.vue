@@ -15,7 +15,7 @@
         setup(){
             const route = useRoute()
             ref(route)
-        return { route }
+        	return { route }
         }
     }
     
@@ -28,7 +28,6 @@
     
     
     
-
 
 
 </script>
