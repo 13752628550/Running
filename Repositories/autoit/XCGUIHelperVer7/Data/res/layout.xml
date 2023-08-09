@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="gb2312" ?>
+<!--炫彩界面库-窗口布局文件-->
+<windowUI left="20" top="20" width="760" height="550" content="炫彩编程助手" layoutLeft="0" layoutTop="88" layoutRight="0" layoutBottom="22" bkInfoM="{5:1(1)2(15)3(0,0,0,0)10(0)20(1)8(0.00)21(1)22(-2105377)23(255);}" bkInfoM_state="1(300*300)" showT="true" drawBk="false">
+    <layoutObject layout.width="fill" layout.height="fill" layout.alignH="right" layout.alignV="top" layout.horizon="true" layout.space="0" layout.padding="0,0,0,0" layout.flag="XC_LAYOUT_TOP" showT="true">
+        <layoutObject layout.width="280" layout.height="fill" layout.alignH="right" layout.alignV="center" layout.horizon="true" layout.padding="0,0,0,1" showT="true">
+            <shapePicture left="91" top="44" width="260" height="70" image="@6.png" showT="true" />
+        </layoutObject>
+        <layoutObject layout.width=":1" layout.height="fill" layout.alignH="left" layout.alignV="top" layout.horizon="false" showT="true">
+            <layoutObject layout.width="fill" layout.height="30" layout.alignH="right" layout.alignV="top" layout.horizon="true" layout.space="0" layout.padding="0,0,0,0" showT="true">
+                <layoutObject layout.width=":1" layout.height="fill" layout.alignH="left" layout.alignV="center" layout.horizon="true" showT="true">
+                    <buttonUI left="555" top="19" width="80" height="25" content="帮助文档" transparent="true" drawFocus="false" buttonType="radio" buttonStyle="button" textAlign="DT_CENTER | DT_VCENTER | " bkInfoM="{6:1(272)2(33)3(5,15,15,100)10(0)20(1)8(0.00)21(1)22(855638015)23(50);6:1(144)2(33)3(5,15,15,100)10(0)20(1)8(0.00)21(1)22(-939458688)23(200);6:1(288)2(33)3(5,15,15,100)10(0)20(1)8(0.00)21(1)22(-1258291201)23(180);6:1(160)2(33)3(5,15,15,15)10(0)20(1)8(0.00)21(1)22(-1778319488)23(150);}" bkInfoM_state="272(300*300),144(300*300),288(300*300),160(300*300)" check="false" offsetX="8" showT="true" groupID="2" />
+                    <buttonUI left="555" top="19" width="80" height="25" content="炫彩助手" transparent="true" drawFocus="false" buttonType="radio" buttonStyle="button" textAlign="DT_CENTER | DT_VCENTER | " bkInfoM="{6:1(272)2(33)3(5,15,15,100)10(0)20(1)8(0.00)21(1)22(855638015)23(50);6:1(144)2(33)3(5,15,15,100)10(0)20(1)8(0.00)21(1)22(-939458688)23(200);6:1(288)2(33)3(5,15,15,100)10(0)20(1)8(0.00)21(1)22(-1258291201)23(180);6:1(160)2(33)3(5,15,15,15)10(0)20(1)8(0.00)21(1)22(-1778319488)23(150);}" bkInfoM_state="272(300*300),144(300*300),288(300*300),160(300*300)" check="true" offsetX="8" showT="true" groupID="2" />
+                    <buttonUI left="555" top="19" width="80" height="25" content="视频教程" transparent="true" drawFocus="false" buttonType="radio" buttonStyle="button" textAlign="DT_CENTER | DT_VCENTER | " bkInfoM="{6:1(272)2(33)3(5,15,15,100)10(0)20(1)8(0.00)21(1)22(855638015)23(50);6:1(144)2(33)3(5,15,15,100)10(0)20(1)8(0.00)21(1)22(-939458688)23(200);6:1(288)2(33)3(5,15,15,100)10(0)20(1)8(0.00)21(1)22(-1258291201)23(180);6:1(160)2(33)3(5,15,15,15)10(0)20(1)8(0.00)21(1)22(-1778319488)23(150);}" bkInfoM_state="272(300*300),144(300*300),288(300*300),160(300*300)" check="false" offsetX="8" showT="true" groupID="2" />
+                    <buttonUI left="555" top="19" width="80" height="25" content="论坛提问" transparent="true" drawFocus="false" buttonType="radio" buttonStyle="button" textAlign="DT_CENTER | DT_VCENTER | " bkInfoM="{6:1(272)2(33)3(5,15,15,100)10(0)20(1)8(0.00)21(1)22(855638015)23(50);6:1(144)2(33)3(5,15,15,100)10(0)20(1)8(0.00)21(1)22(-939458688)23(200);6:1(288)2(33)3(5,15,15,100)10(0)20(1)8(0.00)21(1)22(-1258291201)23(180);6:1(160)2(33)3(5,15,15,15)10(0)20(1)8(0.00)21(1)22(-1778319488)23(150);}" bkInfoM_state="272(300*300),144(300*300),288(300*300),160(300*300)" check="false" offsetX="8" showT="true" groupID="2" />
+                    <buttonUI left="555" top="19" width="80" height="25" content="付费支持" transparent="true" drawFocus="false" buttonType="radio" buttonStyle="button" textAlign="DT_CENTER | DT_VCENTER | " bkInfoM="{6:1(272)2(33)3(5,15,15,100)10(0)20(1)8(0.00)21(1)22(855638015)23(50);6:1(144)2(33)3(5,15,15,100)10(0)20(1)8(0.00)21(1)22(-939458688)23(200);6:1(288)2(33)3(5,15,15,100)10(0)20(1)8(0.00)21(1)22(-1258291201)23(180);6:1(160)2(33)3(5,15,15,15)10(0)20(1)8(0.00)21(1)22(-1778319488)23(150);}" bkInfoM_state="272(300*300),144(300*300),288(300*300),160(300*300)" check="false" offsetX="8" showT="true" groupID="2" />
+                </layoutObject>
+                <layoutObject layout.width="70" layout.height="fill" layout.alignH="right" layout.alignV="center" layout.horizon="true" layout.padding="0,0,3,0" layout.space="3" showT="true">
+                    <buttonUI left="425" top="9" width="30" height="22" buttonType="min" showT="true" transparent="true" textColor="#FF808080" expandButton="false" content="-" bkInfoM="{5:1(272)2(15)3(0,0,0,0)10(0)20(1)8(0.00)21(1)22(855569663)23(50);5:1(288)2(15)3(0,0,0,0)10(0)20(1)8(0.00)21(1)22(1358886143)23(80);}" bkInfoM_state="272(200*200),288(200*200)" drawFocus="false" />
+                    <buttonUI left="437" top="17" width="30" height="22" buttonType="close" showT="true" transparent="true" textColor="#FF808080" content="×" bkInfoM="{5:1(272)2(15)3(0,0,0,0)10(0)20(1)8(0.00)21(1)22(855569663)23(50);5:1(288)2(15)3(0,0,0,0)10(0)20(1)8(0.00)21(1)22(-14285841)23(255);}" bkInfoM_state="272(200*200),288(200*200)" drawFocus="false" />
+                </layoutObject>
+            </layoutObject>
+            <layoutObject layout.width="fill" layout.height=":1" layout.alignH="center" layout.alignV="bottom" layout.horizon="true" showT="true">
+                <buttonUI left="285" top="28" width="100" height="40" content="代码管理" buttonType="radio" buttonStyle="button" showT="true" iconAlign="top" textAlign="DT_CENTER | DT_VCENTER | DT_SINGLELINE | DT_END_ELLIPSIS | " transparent="true" check="true" groupID="1" enableFocus="false" bindEle="200" textColor="#FF808080" id="800" bkInfoM="{5:1(288)2(15)3(0,0,0,0)10(0)20(1)8(0.00)21(1)22(1023410175)23(60);5:1(320)2(15)3(0,0,0,0)10(0)20(1)8(0.00)21(1)22(1694498815)23(100);5:1(128)2(15)3(0,0,0,0)10(0)20(1)8(0.00)21(1)22(2030043135)23(120);}" bkInfoM_state="272(200*200),288(200*200),320(200*200),128(200*200)" font="@ID_FONT_0" />
+                <buttonUI left="285" top="28" width="100" height="40" content="事件管理" buttonType="radio" buttonStyle="button" showT="true" iconAlign="top" textAlign="DT_CENTER | DT_VCENTER | DT_SINGLELINE | DT_END_ELLIPSIS | " transparent="true" check="false" groupID="1" enableFocus="false" bindEle="300" textColor="#FF808080" id="801" bkInfoM="{5:1(288)2(15)3(0,0,0,0)10(0)20(1)8(0.00)21(1)22(1023410175)23(60);5:1(320)2(15)3(0,0,0,0)10(0)20(1)8(0.00)21(1)22(1694498815)23(100);5:1(128)2(15)3(0,0,0,0)10(0)20(1)8(0.00)21(1)22(2030043135)23(120);}" bkInfoM_state="272(200*200),288(200*200),320(200*200),128(200*200)" font="@ID_FONT_0" />
+                <buttonUI left="285" top="28" width="100" height="40" content="常用代码" buttonType="radio" buttonStyle="button" showT="true" iconAlign="top" textAlign="DT_CENTER | DT_VCENTER | DT_SINGLELINE | DT_END_ELLIPSIS | " transparent="true" check="false" groupID="1" enableFocus="false" bindEle="400" textColor="#FF808080" id="802" bkInfoM="{5:1(288)2(15)3(0,0,0,0)10(0)20(1)8(0.00)21(1)22(1023410175)23(60);5:1(320)2(15)3(0,0,0,0)10(0)20(1)8(0.00)21(1)22(1694498815)23(100);5:1(128)2(15)3(0,0,0,0)10(0)20(1)8(0.00)21(1)22(2030043135)23(120);}" bkInfoM_state="272(200*200),288(200*200),320(200*200),128(200*200)" font="@ID_FONT_0" />
+            </layoutObject>
+        </layoutObject>
+    </layoutObject>
+    <layoutObject layout.width="fill" layout.height="fill" layout.alignH="left" layout.alignV="top" layout.horizon="true" layout.space="2" layout.padding="1,1,1,1" layout.flag="XC_LAYOUT_BOTTOM" showT="true">
+        <elementUI left="109" top="394" width="100" height="100" layout.width="fill" layout.height="fill" showT="true" transparent="true" drawFocus="false">
+            <layoutObject layout.width="fill" layout.height="fill" layout.alignH="left" layout.alignV="top" layout.horizon="true" layout.space="0" layout.padding="5,0,0,0" showT="true">
+                <shapeText left="61" top="9" layout.width="auto" layout.height="20" content="工程目录" showT="true" textColor="#FF808080" />
+                <richEditUI left="58" top="0" width="551" height="20" layout.width=":1" transparent="true" enableToolTip="false" drawFocus="false" showT="true" id="@ID_editPath" textColor="#FF808080" />
+                <buttonUI left="279" top="6" width="60" height="20" content="打开" transparent="true" showT="true" drawFocus="false" enableFocus="false" textColor="#FF7B7B7B" id="20" />
+                <shapeText left="57" top="6" layout.width="auto" layout.height="20" content="Ver 1.9.6" font="@ID_FONT_1" textColor="#FF808080" showT="true" />
+                <textLinkUI content="" left="27" top="9" width="0" height="0" transparent="true" id="@ID_HelperVer" underlineLeave="false" underlineStay="false" showT="true" />
+            </layoutObject>
+        </elementUI>
+    </layoutObject>
+    <layoutObject layout.width="fill" layout.height="fill" layout.alignH="left" layout.alignV="top" layout.horizon="true" layout.space="0" layout.padding="0,0,0,0" layout.flag="XC_LAYOUT_BODY" showT="true">
+        <elementUI left="108" top="178" width="100" height="100" layout.width="fill" layout.height="fill" showT="false" id="200" enableFocus="false" bkInfoM="{5:1(16)2(15)3(0,0,0,0)10(1)20(1)8(0.00)21(1)22(-328966)23(255)7(1)11(1)12(-4144960)13(255);}" bkInfoM_state="16(300*300)">
+            <layoutObject layout.width="fill" layout.height="fill" layout.alignH="left" layout.alignV="top" layout.horizon="true" layout.space="0" layout.padding="0,0,0,0" showT="true">
+                <layoutObject layout.width=":4" layout.height="fill" layout.alignH="left" layout.alignV="top" layout.horizon="false" showT="true">
+                    <listBoxUI left="363" top="103" width="100" height="100" layout.width="fill" layout.height=":1" enableFocus="false" id="@ID_page1_listbox" showT="true" alpha="180" drawFocus="false" bkInfoM="{6:1(128)2(15)3(0,0,0,0)10(0)20(1)8(0.00)21(1)22(1694498815)23(100);}" bkInfoM_state="128(300*300)" />
+                </layoutObject>
+                <layoutObject layout.width=":2" layout.height="fill" layout.alignH="left" layout.alignV="top" layout.horizon="false" showT="true">
+                    <layoutObject layout.width="fill" layout.height="40" layout.alignH="left" layout.alignV="center" layout.horizon="true" showT="true" layout.padding="10,0,10,0" layout.space="2">
+                        <richEditUI left="662" top="28" width="100" height="25" layout.width=":1" showT="true" id="@ID_page1_editSearch" />
+                        <buttonUI left="770" top="21" width="60" height="25" content="搜索" showT="true" id="@ID_page1_btnSearch" />
+                    </layoutObject>
+                    <layoutObject layout.width="fill" layout.height="120" layout.alignH="left" layout.alignV="center" layout.horizon="true" showT="true" layout.padding="0,0,0,0" layout.space="0">
+                        <elementUI left="603" top="83" width="100" height="100" layout.width="fill" layout.height="fill" bkInfoM="{5:1(16)2(15)3(0,0,0,0)10(0)20(1)8(0.00)21(1)22(-328966)23(255);}" bkInfoM_state="16(300*300)" drawFocus="false" mouseThrough="true" showT="true">
+                            <layoutObject layout.width="fill" layout.height="fill" layout.alignH="left" layout.alignV="top" layout.horizon="false" layout.space="0" layout.padding="0,0,0,0" showT="true">
+                                <layoutObject layout.width="fill" layout.height="25" layout.alignH="left" layout.alignV="center" layout.horizon="true" layout.space="5" layout.padding="5,0,5,0" showT="true">
+                                    <shapeText left="29" top="15" layout.width="auto" layout.height="20" content="分类显示:" showT="true" />
+                                    <elementUI left="190" top="12" width="100" height="15" layout.width=":1" bkInfoM="{5:1(16)2(48)3(300,1,0,2)10(0)20(1)8(0.00)21(1)22(-4144960)23(255);}" bkInfoM_state="16(300*300)" drawFocus="false" mouseThrough="true" showT="true" />
+                                </layoutObject>
+                                <layoutObject layout.width="fill" layout.height="40" layout.alignH="center" layout.alignV="top" layout.horizon="true" layout.space="2" showT="true">
+                                    <buttonUI left="28" top="36" width="60" height="25" content="全部" id="@ID_page1_btn_showall" showT="true" />
+                                    <buttonUI left="108" top="46" width="60" height="25" content="完整示例" id="@ID_page1_btn_showcomplete" showT="true" />
+                                    <buttonUI left="159" top="46" width="60" height="25" content="元素" id="@ID_page1_btn_showele" showT="true" />
+                                    <buttonUI left="198" top="58" width="60" height="25" content="布局对象" id="@ID_page1_btn_showlayout" showT="true" />
+                                </layoutObject>
+                                <layoutObject layout.width="fill" layout.height=":1" layout.alignH="left" layout.alignV="top" layout.horizon="false" showT="true">
+                                    <layoutObject layout.width="fill" layout.height=":1" layout.alignH="center" layout.alignV="top" layout.horizon="true" layout.space="2" showT="true">
+                                        <buttonUI left="43" top="69" width="60" height="25" content="窗口" id="@ID_page1_btn_showWindow" showT="true" />
+                                        <buttonUI left="115" top="71" width="60" height="25" content="按钮" id="@ID_page1_btn_showBtn" showT="true" />
+                                        <buttonUI left="157" top="74" width="60" height="25" content="列表视图" id="@ID_page1_btn_listview" showT="true" />
+                                        <buttonUI left="199" top="75" width="60" height="25" content="自绘" id="@ID_page1_btn_showuserDraw" showT="true" />
+                                    </layoutObject>
+                                    <layoutObject layout.width="fill" layout.height=":1" layout.alignH="center" layout.alignV="top" layout.horizon="true" layout.space="2" showT="true">
+                                        <buttonUI left="-2" top="92" width="60" height="25" content="列表框" id="@ID_page1_btn_listbox" showT="true" />
+                                        <buttonUI left="97" top="104" width="60" height="25" content="菜单" id="@ID_page1_btn_menu" showT="true" />
+                                        <buttonUI left="161" top="104" width="60" height="25" content="列表元素" id="@ID_page1_btn_list" showT="true" />
+                                        <buttonUI left="198" top="106" width="60" height="25" content="树" id="@ID_page1_btn_tree" showT="true" />
+                                    </layoutObject>
+                                </layoutObject>
+                            </layoutObject>
+                        </elementUI>
+                    </layoutObject>
+                    <layoutObject layout.width="fill" layout.height=":1" layout.alignH="left" layout.alignV="top" layout.horizon="false" showT="true" layout.space="1" layout.padding="5,5,5,0">
+                        <layoutObject layout.width="fill" layout.height="40" layout.alignH="left" layout.alignV="top" layout.horizon="true" layout.space="5" showT="true">
+                            <shapeText left="530" top="5" layout.width="80" layout.height="20" content="例子语言种类" showT="true" />
+                            <comboBoxUI left="584" top="24" width="100" height="20" enableFocus="true" id="@ID_page1_comboBox" showT="true" bkInfoM_state="16(300*300)" layout.width=":1" drawFocus="false" />
+                        </layoutObject>
+                        <layoutObject layout.width="fill" layout.height=":1" layout.alignH="left" layout.alignV="top" layout.horizon="false" id="@ID_page1_layoutSlnVer" showT="true" />
+                    </layoutObject>
+                </layoutObject>
+            </layoutObject>
+        </elementUI>
+        <elementUI left="0" top="88" width="612" height="351" layout.width="fill" layout.height="fill" showT="false" show="false" drawFocus="false" enableFocus="false" id="300">
+            <layoutObject layout.width="fill" layout.height="fill" layout.alignH="left" layout.alignV="top" layout.horizon="true" layout.space="0" layout.padding="0,0,0,0" showT="true">
+                <layoutObject layout.width=":2" layout.height="fill" layout.alignH="left" layout.alignV="top" layout.horizon="true" showT="true">
+                    <treeUI left="82" top="42" width="100" height="100" layout.width="fill" layout.height="fill" showT="true" id="301" alpha="128" />
+                </layoutObject>
+                <layoutObject layout.width=":5" layout.height="fill" layout.alignH="left" layout.alignV="top" layout.horizon="false" showT="true">
+                    <layoutObject layout.width="fill" layout.height="30" layout.alignH="left" layout.alignV="top" layout.horizon="true" showT="true" layout.padding="2,5,2,0" layout.space="5">
+                        <shapeText left="263" top="11" layout.width="auto" layout.height="20" content="编程语言" showT="true" />
+                        <comboBoxUI left="291" top="9" width="100" height="20" showT="true" id="302" />
+                        <shapeText left="376" top="19" layout.width="auto" layout.height="20" content="事件名称" showT="true" />
+                        <richEditUI left="455" top="13" width="100" height="20" layout.width=":1" id="304" showT="true" />
+                    </layoutObject>
+                    <layoutObject layout.width="fill" layout.height=":1" layout.alignH="left" layout.alignV="top" layout.horizon="true" showT="true" layout.padding="0,0,0,0">
+                        <richEditUI left="315" top="130" width="100" height="20" layout.width="fill" layout.height="fill" showT="true" id="303" alpha="128" />
+                    </layoutObject>
+                </layoutObject>
+            </layoutObject>
+        </elementUI>
+        <elementUI left="0" top="88" width="612" height="351" layout.width="fill" layout.height="fill" showT="true" show="false" drawFocus="false" enableFocus="false" id="400">
+            <layoutObject layout.width="fill" layout.height="fill" layout.alignH="left" layout.alignV="top" layout.horizon="true" layout.space="0" layout.padding="0,0,0,0" showT="true">
+                <layoutObject layout.width=":2" layout.height="fill" layout.alignH="left" layout.alignV="top" layout.horizon="true" showT="true">
+                    <treeUI left="78" top="63" width="100" height="100" layout.width="fill" layout.height="fill" drawFocus="false" showT="true" id="401" alpha="128" />
+                </layoutObject>
+                <layoutObject layout.width=":5" layout.height="fill" layout.alignH="left" layout.alignV="top" layout.horizon="false" showT="true">
+                    <layoutObject layout.width="fill" layout.height="50" layout.alignH="left" layout.alignV="top" layout.horizon="false" showT="true">
+                        <layoutObject layout.width="fill" layout.height=":1" layout.alignH="left" layout.alignV="top" layout.horizon="true" layout.space="5" layout.padding="2,2,2,0" showT="true">
+                            <shapeText left="232" top="18" layout.width="auto" layout.height="20" content="检索标题" showT="true" />
+                            <richEditUI left="254" top="9" width="100" height="20" layout.width=":1" showT="true" id="402" />
+                        </layoutObject>
+                        <layoutObject layout.width="fill" layout.height=":1" layout.alignH="left" layout.alignV="top" layout.horizon="true" layout.space="5" layout.padding="2,0,2,0" showT="true">
+                            <shapeText left="222" top="71" layout.width="auto" layout.height="20" content="编程语言" showT="true" />
+                            <comboBoxUI left="264" top="63" width="100" height="20" drawFocus="false" showT="true" id="403" />
+                            <shapeText left="367" top="39" layout.width="auto" layout.height="20" content="标题" showT="true" />
+                            <richEditUI left="398" top="29" width="100" height="20" layout.width=":1" showT="true" id="404" />
+                            <buttonUI left="468" top="34" width="60" height="20" content="添加" showT="true" id="405" />
+                        </layoutObject>
+                    </layoutObject>
+                    <layoutObject layout.width="fill" layout.height=":1" layout.alignH="left" layout.alignV="top" layout.horizon="true" showT="true" layout.padding="0,0,0,0">
+                        <richEditUI left="351" top="109" width="100" height="20" layout.width="fill" layout.height="fill" drawFocus="false" showT="true" id="406" alpha="128" />
+                    </layoutObject>
+                </layoutObject>
+            </layoutObject>
+        </elementUI>
+    </layoutObject>
+</windowUI>

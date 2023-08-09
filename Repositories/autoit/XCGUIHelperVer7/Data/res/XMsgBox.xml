@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="gb2312" ?>
+<!--炫彩界面库-窗口布局文件-->
+<windowUI left="100" top="100" width="300" height="150" layoutLeft="0" layoutTop="35" layoutRight="0" layoutBottom="0">
+    <layoutObject layout.width="fill" layout.height="fill" layout.alignH="left" layout.alignV="top" layout.horizon="false" layout.space="0" layout.padding="0,0,0,0" layout.flag="XC_LAYOUT_BODY" showT="true">
+        <layoutObject layout.width="fill" layout.height=":1" layout.alignH="left" layout.alignV="top" layout.horizon="true" showT="true" />
+        <layoutObject layout.width="fill" layout.height="25" layout.alignH="left" layout.alignV="top" layout.horizon="true" showT="true">
+            <elementUI left="202" top="126" width="100" height="100" layout.width="fill" layout.height="fill" bkColor="#FFBCBBB8" showT="true">
+                <layoutObject layout.width="fill" layout.height="fill" layout.alignH="right" layout.alignV="top" layout.horizon="true" layout.space="2" layout.padding="2,2,2,2" showT="true">
+                    <buttonUI left="251" top="19" width="60" height="20" content="确定" showT="true" />
+                    <buttonUI left="169" top="10" width="60" height="20" content="取消" showT="true" />
+                </layoutObject>
+            </elementUI>
+        </layoutObject>
+    </layoutObject>
+</windowUI>

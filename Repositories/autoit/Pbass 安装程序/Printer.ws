@@ -1,0 +1,22 @@
+[Profile]
+ID=WS
+Version=7
+[CT]
+trace=Y
+[Telnet5250]
+HostName=A10TM.EXAS.AD.LOCAL
+Security=CA400
+SSLClientAuthentication=Y
+[Communication]
+Link=telnet5250
+Session=5250
+[5250]
+SessionType=Printer
+HostCodePage=037-U
+WorkStationID=ExxxxxxP1
+PrinterType=IBM3812
+[Keyboard]
+CuaKeyboard=2
+Language=Prc
+IBMDefaultKeyboard=N
+DefaultKeyboard=C:\Program Files (x86)\IBM\Client Access\Emulator\private\AS400.KMP

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="gb2312" ?>
+<!--炫彩界面库-项目配置文件-->
+<project name="DemoManager">
+    <layoutFiles>
+        <param path="layout.xml" />
+        <param path=".\ListBox_Item.xml" />
+        <param path=".\Tree_Item.xml" />
+        <param path=".\Tree_Item_Page2.xml" />
+        <param path=".\DemoGif.xml" />
+        <param path=".\DemoPic.xml" />
+    </layoutFiles>
+    <styleFiles>
+        <param path="style.xml" />
+    </styleFiles>
+    <resourceFiles>
+        <param path="resource.xml" />
+    </resourceFiles>
+</project>

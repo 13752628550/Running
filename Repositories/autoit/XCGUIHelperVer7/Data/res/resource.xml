@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="gb2312" ?>
+<!--炫彩界面库-资源文件-->
+<resources>
+    <type_image>
+        <image name="6.png" value=".\Image\6.png" loadType="file" style="stretch" />
+    </type_image>
+    <type_id>
+        <id name="ID_DemoGif" value="1000" />
+        <id name="ID_DemoPic" value="1100" />
+        <id name="ID_HelperVer" value="25" />
+        <id name="ID_editPath" value="501" />
+        <id name="ID_page1_btnSearch" value="206" />
+        <id name="ID_page1_btn_list" value="220" />
+        <id name="ID_page1_btn_listbox" value="218" />
+        <id name="ID_page1_btn_listview" value="216" />
+        <id name="ID_page1_btn_menu" value="219" />
+        <id name="ID_page1_btn_showBtn" value="215" />
+        <id name="ID_page1_btn_showWindow" value="214" />
+        <id name="ID_page1_btn_showall" value="210" />
+        <id name="ID_page1_btn_showcomplete" value="211" />
+        <id name="ID_page1_btn_showele" value="212" />
+        <id name="ID_page1_btn_showlayout" value="213" />
+        <id name="ID_page1_btn_showuserDraw" value="217" />
+        <id name="ID_page1_btn_tree" value="221" />
+        <id name="ID_page1_comboBox" value="203" />
+        <id name="ID_page1_editSearch" value="205" />
+        <id name="ID_page1_layoutSlnVer" value="204" />
+        <id name="ID_page1_listbox" value="202" />
+    </type_id>
+    <type_font>
+        <font name="ID_FONT_0" value="微软雅黑" size="15" style="bold" />
+        <font name="ID_FONT_1" value="宋体" size="10" style="bold" />
+    </type_font>
+    <type_string />
+    <type_color />
+</resources>

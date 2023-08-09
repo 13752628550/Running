@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="gb2312" ?>
+<!--炫彩界面库-列表框元素项模板文件-->
+<xc_template_listBox>
+    <layoutObject layout.horizon="true" layout.alignH="left" layout.alignV="top" layout.width="auto" layout.height="fill" layout.space="2" layout.padding="0,0,0,0" showT="true" widthT="400">
+        <layoutObject layout.width=":1" layout.height="fill" layout.alignH="left" layout.alignV="top" layout.horizon="true" showT="true">
+            <shapeText itemID="1" layout.width="auto" layout.height="fill" content="{binding field=name source=data bSync=false}" showT="true" />
+        </layoutObject>
+        <layoutObject layout.width="200" layout.height="fill" layout.alignH="right" layout.alignV="center" layout.horizon="true" layout.space="10" layout.padding="0,0,5,0" showT="true">
+            <buttonUI left="252" top="33" width="40" height="20" content="预览" itemID="4" showT="true" drawFocus="false" transparent="true" bkInfoM="{5:1(16)2(15)3(0,0,0,0)10(0)20(1)8(0.00)21(0)24(2,90.00,255,0,851493056,100);5:1(32)2(15)3(0,0,0,0)10(0)20(1)8(0.00)21(0)24(2,90.00,180404416,0,-926891840,100);5:1(64)2(15)3(0,0,0,0)10(0)20(1)8(0.00)21(0)24(3,90.00,-4144960,0,-4144960,100,255,50);}" bkInfoM_state="16(300*300),32(300*300),64(300*300)" />
+            <buttonUI left="252" top="33" width="60" height="20" content="查看源码" itemID="2" showT="true" drawFocus="false" transparent="true" bkInfoM="{5:1(16)2(15)3(0,0,0,0)10(0)20(1)8(0.00)21(0)24(2,90.00,255,0,851493056,100);5:1(32)2(15)3(0,0,0,0)10(0)20(1)8(0.00)21(0)24(2,90.00,180404416,0,-926891840,100);5:1(64)2(15)3(0,0,0,0)10(0)20(1)8(0.00)21(0)24(3,90.00,-4144960,0,-4144960,100,255,50);}" bkInfoM_state="16(300*300),32(300*300),64(300*300)" />
+            <buttonUI left="252" top="33" width="70" height="20" content="生成代码" itemID="3" showT="true" drawFocus="false" transparent="true" bkInfoM="{5:1(16)2(15)3(0,0,0,0)10(0)20(1)8(0.00)21(0)24(2,90.00,255,0,851493056,100);5:1(32)2(15)3(0,0,0,0)10(0)20(1)8(0.00)21(0)24(2,90.00,180404416,0,-926891840,100);5:1(64)2(15)3(0,0,0,0)10(0)20(1)8(0.00)21(0)24(3,90.00,-4144960,0,-4144960,100,255,50);}" bkInfoM_state="16(300*300),32(300*300),64(300*300)" />
+        </layoutObject>
+    </layoutObject>
+</xc_template_listBox>
