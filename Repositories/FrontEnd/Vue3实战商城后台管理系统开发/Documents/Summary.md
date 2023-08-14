@@ -26,13 +26,13 @@
  import './style.css'
  import App from './App.vue'
  createApp(App).use(ElementPlus).mount('#app')   `//应用组件` 
- 
 ```
 
 ### 3. windicss
 
 ```
 
+ 
 ```
 
 ### 4. vue-router4
