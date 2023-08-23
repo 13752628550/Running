@@ -21,3 +21,20 @@ export function login(username, password) {
         password
     })
 }
+
+/* *************** 2. 获取管理员信息和权限菜单 *****************
+    1. 接口URL
+        http://ceshi13.dishait.cn/admin/getinfo
+
+    2. 请求方式
+        POST
+        Content-Type
+        application/x-www-form-urlencoded
+
+    3. 请求Header参数
+        参数名	示例值	        参数类型	是否必填   参数描述
+        token	174...cc40	    Text	    是	     用户token
+************************************************************/
+export function getinfo() {
+    return axios.post("/admin/getinfo")
+}

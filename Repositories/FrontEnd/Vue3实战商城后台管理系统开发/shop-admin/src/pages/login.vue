@@ -38,7 +38,7 @@
                 </el-form-item>    
                 <!-- 右侧按钮登录 -->
                 <el-form-item>
-                    <el-button round color="#6a6aef" class="rfbutton" type="primary" @click="onSubmit">登 录</el-button>
+                    <el-button round color="#6a6aef" class="rfbutton" type="primary" @click="onSubmit" :loading="loading">登 录</el-button>
                 </el-form-item>
             </el-form>
         </div>
@@ -47,10 +47,10 @@
 
 <script setup>
     import { ref,reactive } from 'vue'
-    import { ElNotification } from 'element-plus'  // 引入 element-plus Notification
+    import { toast } from '~/composables/util'
     import { useRouter } from 'vue-router'         // 用于登录成功，转入新页面
-    import { login } from '~/api/manager'          // 导入登录请求 axios
-    import { useCookies } from '@vueuse/integrations/useCookies'
+    import { login,getinfo } from '~/api/manager'          // 导入登录请求 axios
+    import { setToken } from '~/composables/auth'
     
     const router = useRouter()
     
@@ -79,38 +79,27 @@
     }
     
     const formRef = ref(null)                       // 用于点击登录按钮时验证规则
+    const loading = ref(false)
     // 定义提交按钮事件
     const onSubmit = () => {
         formRef.value.validate((valid,fields)=>{
             if(!valid){
                 return false
             }
-            
+            loading.value = true                    // 加载时 loading
             login(form.username,form.password)      // 执行登录请求 axios
             .then(res =>{                           // 登录请求成功
                 // 提示登录成功
-                ElNotification({
-                    message: "登录成功",
-                    type: 'success',
-                    duration:3000
-                })
+                toast("登录成功")
 
                 // 存储 token 和用户相关信息
-                const cookie = useCookies()
-                cookie.set("admin-token",res.data.data.token)
+                setToken(res.token) 
 
                 // 跳转到后台主页
-                
                 router.push("/")
             })
-            .catch(err=>{                           // 登录请求失败
-                // 通过 element-plus 通知发送信息 
-                ElNotification({
-                    message: err.response.data.msg || "请求失败",
-                    type: 'error',
-                    duration:3000
-                })
-
+            .finally(()=>{
+                loading.value = false      // 结束加载时 loading
             })
         })
     }

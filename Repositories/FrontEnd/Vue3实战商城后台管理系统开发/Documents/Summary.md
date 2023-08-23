@@ -557,6 +557,151 @@ export function login(username, password) {
 
 
 
+### 6. Axios 拦截器
+
+#### 请求拦截
+
+* 请求拦截器允许你在发出请求之前对请求进行修改、添加请求头或进行其他处理
+* **认证和授权：** 在每个请求中添加身份验证的令牌、认证头部等信息，确保请求能够通过认证和授权机制。
+* **全局 Loading 效果：** 在请求开始时展示一个加载中的效果，请求完成后关闭
+* **请求参数加工：** 对请求参数进行加密、编码或其他处理，确保请求的参数满足服务端的要求
+* **日志记录：** 记录每个请求的详细信息，以便于调试和监控
+
+```js
+/* src/axios.js */
+import axios from "axios"
+import { ElNotification } from 'element-plus'  // 引入 element-plus Notification
+import { useCookies } from '@vueuse/integrations/useCookies'
+
+// 1. 创建 axios 实例
+	
+
+// 2. 添加请求拦截器
+service.interceptors.request.use(function (config) {
+    // 在请求 header 头自动添加token , 在登录时存入token, 以后请求就能省略 Token
+    const cookie = useCookies()
+    const token = cookie.get("admin-token")
+    if (token) {
+        config.headers["token"] = token
+    }
+
+    return config;
+}, function (error) {
+    // 对请求不正确操作
+    return Promise.reject(error);
+});
+
+// 3. 添加响应拦截器
+	
+
+// 实例进行默认导出
+export default service
+```
+
+
+
+
+
+#### 响应拦截
+
+* 响应拦截器允许你在收到响应数据之前对响应进行处理
+* **全局错误处理：** 在响应返回后检查状态码，根据状态码执行不同的操作，如重定向到错误页面或显示错误提示
+* **数据处理：** 对返回的数据进行处理，如解密、解压、格式化等，确保数据能够被正确处理
+* **统一格式化：** 将不同接口返回的数据统一格式化为特定的数据结构，方便前端处理
+* **Token 刷新：** 在响应中可能会返回更新的身份验证令牌，你可以在响应拦截器中更新本地存储的令牌
+
+```js
+/*  src/axios.js  */ 
+import axios from "axios"
+import { ElNotification } from 'element-plus'  
+
+// 1. 创建 axios 实例
+
+
+// 2. 添加请求拦截器
+
+
+// 3. 添加响应拦截器
+service.interceptors.response.use(function (response) {
+    // 对响应数据做设置
+    return response.data.data;       // 返回响应数据 response.data.data
+}, function (error) {
+    // 对响应不正确做通知
+    ElNotification({
+        message: error.response.data.msg || "请求失败",
+        type: 'error',
+        duration: 3000
+    })
+    return Promise.reject(error);
+});
+
+// 实例进行默认导出
+export default service
+```
+
+
+
+### 7. 工具库封装 
+
+* 能够精简代码
+
+
+
+#### 准备
+
+```shell
+# 1. 建立文件夹
+ > src/composables               `建立文件夹存放工具库`
+```
+
+
+
+#### auth.js
+
+* 用于封装 useCookies 相关操作 
+
+```js
+import { useCookies } from '@vueuse/integrations/useCookies'
+const TokenKey = "admin-token"
+const cookie = useCookies()
+
+// 1. 获取token
+export function getToken() {
+    return cookie.get(TokenKey)
+}
+
+// 2. 设置token
+export function setToken(token) {
+    return cookie.set(TokenKey, token)
+}
+
+// 3. 清除token
+export function removeToken() {
+    return cookie.remove(TokenKey)
+}
+
+```
+
+
+
+#### util.js
+
+* 工具用于通知等操作
+
+```js
+import { ElNotification } from 'element-plus'  // 引入 element-plus Notification
+
+// 消息提示
+export function toast(message, type = "success", dangerouslyUseHTMLString = false) {
+    ElNotification({
+        message,
+        type,
+        dangerouslyUseHTMLString,
+        duration: 3000
+    })
+}
+```
+
 
 
 
