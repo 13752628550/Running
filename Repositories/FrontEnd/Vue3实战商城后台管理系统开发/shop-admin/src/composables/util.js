@@ -9,3 +9,4 @@ export function toast(message, type = "success", dangerouslyUseHTMLString = fals
         duration: 3000
     })
 }
+

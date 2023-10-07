@@ -126,6 +126,37 @@
 
 ### 7. ICONS
 
+```shell
+#1. 安装 
+ > npm install @element-plus/icons-vue
+ 
+#2. 引入 
+ `局部`
+ <script setup>	
+ 	import {Search} from '@element-plus/icons-vue'
+ </script>
+ 
+ `全局` 
+  < main.js >
+  import * as ElementPlusIconsVue from '@element-plus/icons-vue'
+  for (const [key, component] of Object.entries(ElementPlusIconsVue)) {
+    app.component(key, component)  //引入全局图标
+  }
+
+#3. 使用 
+ `属性`
+ <el-input v-model = "input1" :suffix-icon = "search" />
+	
+ `插槽`
+ <el-input v-model="form.username" placeholder="请输入用户名">
+    <template #prefix>
+        <el-icon><User /></el-icon>
+    </template>
+</el-input> 	
+```
+
+
+
 ### 8. axios
 
 ```shell
@@ -703,6 +734,95 @@ export function toast(message, type = "success", dangerouslyUseHTMLString = fals
 ```
 
 
+
+### 8. vuex 状态管理
+
+#### 安装应用
+
+```shell
+# 1. 安装
+ > npm install vuex@next --save
+ 
+# 2. 创建文件夹
+ > src/store               `创建 store 文件夹`
+ > src/store/index.js      `创建 index.js 状态管理文件`
+ 
+# 3. 创建实例  </src/store/index.js>
+ import {createStore} from 'vuex
+ // 创建一个实例
+ const store = createStore({
+    state() {
+        return {
+            // 用户信息
+            user: {}
+        }
+    },
+    mutations: {
+        // 记录用户信息
+        SET_USERINFO(state, user) {
+            state.user = user
+        }
+    }
+ })
+ export default store
+ 
+# 4. 引入文件 </src/main.js>
+ import store from './store'
+ app.use(store)
+ app.mount('#app')
+```
+
+#### 使用管理
+
+```vue
+<script setup>
+	import { useStore } from 'vuex'         // 使用 vuex 管理 
+    const store = useStore()
+    
+</script>
+```
+
+
+
+### 9. 路由拦截
+
+* 通过前置路由守卫，能防止用户不登陆，和用户反复进行登录
+
+#### 准备工作
+
+```shell
+#1. 创建新文件 
+ > src/permission.js       `此文件记录权限信息`
+
+#2. 引入文件 <main.js>
+ import "./permission"        // 引入权限文件
+```
+
+
+
+#### 前置守卫
+
+````js
+<src/permission.js>  
+
+import router from "~/router"
+import { getToken } from "~/composables/auth"
+
+// 全局前置守卫
+router.beforeEach((to, from, next) => {
+    const token = getToken()
+
+    // 权限不通过，强制返回主页
+    if (!token && to.path != "/login") {
+        return next({ path: "/login" })
+    }
+
+    // 权限通过正常放行
+    next()
+})
+
+
+````
 
 
 

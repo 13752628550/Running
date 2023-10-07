@@ -49,9 +49,10 @@
     import { ref,reactive } from 'vue'
     import { toast } from '~/composables/util'
     import { useRouter } from 'vue-router'         // 用于登录成功，转入新页面
+    import { useStore } from 'vuex'         // 使用 vuex 管理 
     import { login,getinfo } from '~/api/manager'          // 导入登录请求 axios
     import { setToken } from '~/composables/auth'
-    
+    const store = useStore()
     const router = useRouter()
     
     // do not use same name with ref
@@ -89,11 +90,18 @@
             loading.value = true                    // 加载时 loading
             login(form.username,form.password)      // 执行登录请求 axios
             .then(res =>{                           // 登录请求成功
+                
                 // 提示登录成功
                 toast("登录成功")
-
+                        
                 // 存储 token 和用户相关信息
                 setToken(res.token) 
+
+                // 获取用户信息
+                getinfo().then(res2=>{
+                    store.commit("SET_USERINFO",res2)
+                    console.log(res2);
+                })
 
                 // 跳转到后台主页
                 router.push("/")
