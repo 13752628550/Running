@@ -7,7 +7,7 @@ import axios from '~/axios'
 
     2. 请求方式
         POST
-        Content-Type
+       Content-Type
         application/x-www-form-urlencoded
 
     3. 请求Body参数
@@ -28,7 +28,7 @@ export function login(username, password) {
 
     2. 请求方式
         POST
-        Content-Type
+       Content-Type
         application/x-www-form-urlencoded
 
     3. 请求Header参数
@@ -37,4 +37,46 @@ export function login(username, password) {
 ************************************************************/
 export function getinfo() {
     return axios.post("/admin/getinfo")
+}
+
+
+/* ******************** 3. 定义登出方法 *****************************
+    1. 接口URL
+        http://ceshi13.dishait.cn/admin/logout
+
+    2. 请求方式
+        POST
+       Content-Type
+        application/x-www-form-urlencoded
+
+    3. 请求Body参数
+        参数名	    示例值	        参数类型	是否必填	参数描述
+        token	    1bd....772	    Text	    是	    用户token
+********************************************************************/
+export function logout() {
+    return axios.post("/admin/logout")
+}
+
+
+/* ******************** 4. 修改密码方法 *****************************
+    1. 接口URL
+        http://ceshi13.dishait.cn/admin/updatepassword
+
+    2. 请求方式
+        POST
+       application/x-www-form-urlencoded
+
+    3. 请求Header参数
+       参数名	    示例值	        参数类型	是否必填	参数描述
+       token	   566...61d	    Text	    是	       用户token     
+       
+       请求Body参数
+        参数名	    示例值	        参数类型	是否必填	参数描述
+        oldpassword	admin	        Text	    是	        旧密码
+        password	1234	        Text	    是	        新密码
+        repassword	1234	        Text	    是	        确认密码
+********************************************************************/
+export function updatepassword(data) {
+    return axios.post("/admin/updatepassword", data)
+
 }

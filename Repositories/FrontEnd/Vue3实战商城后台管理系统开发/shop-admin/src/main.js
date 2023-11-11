@@ -16,6 +16,8 @@ for (const [key, component] of Object.entries(ElementPlusIconsVue)) {
 }
 import "./permission"        // 引入路由权限文件
 
+import "nprogress/nprogress.css"
+
 app.mount('#app')
 
 

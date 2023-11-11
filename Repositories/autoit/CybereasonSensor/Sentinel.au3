@@ -32,12 +32,12 @@ Local $OSVer = @OSVersion
 Local $OSBit = @OSArch
 Local $FilPath = "\\172.26.32.251\softwa\pcsetup\CybereasonSensor"
 Local $LogFilPath = "\\172.26.32.251\softwa\pcsetup\CybereasonSensor\SavLogFil"
-Local $acvFil= "C:\Program Files\SentinelOne\Sentinel agent 22.3.4.612\Sentinelagent.exe"
+Local $acvFil= "C:\Program Files\SentinelOne\Sentinel agent 23.2.3.358\Sentinelagent.exe"
 Local $LogFilNam = "Sentinel.csv"
 If $OSBit = "X86" Then
-	Local $FilNam = "SentinelInstaller_windows_32bit_v22_3_4_612.msi"
+	Local $FilNam = "SentinelInstaller_windows_32bit_v23_2_3_358.msi"
 Else
-	Local $FilNam = "SentinelInstaller_windows_64bit_v22_3_4_612.msi"
+	Local $FilNam = "SentinelInstaller_windows_64bit_v23_2_3_358.msi"
 EndIf
 
 ;~ Local $InsComStr =@TempDir & "\" & $FilNam & ' /SITE_TOKEN="eyJ1cmwiOiAiaHR0cHM6Ly9hcG5lMS0xMDAyLnNlbnRpbmVsb25lLm5ldCIsICJzaXRlX2tleSI6ICIxYTliYWYzY2NmNDgwNzY1In0=" /SILENT /SERVER_PROXY=http://172.25.65.115:8080 '

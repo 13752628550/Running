@@ -46,12 +46,11 @@
 </template>
 
 <script setup>
-    import { ref,reactive } from 'vue'
+    import { ref,reactive,onMounted,onBeforeUnmount } from 'vue'
     import { toast } from '~/composables/util'
     import { useRouter } from 'vue-router'         // 用于登录成功，转入新页面
     import { useStore } from 'vuex'         // 使用 vuex 管理 
-    import { login,getinfo } from '~/api/manager'          // 导入登录请求 axios
-    import { setToken } from '~/composables/auth'
+    
     const store = useStore()
     const router = useRouter()
     
@@ -81,6 +80,7 @@
     
     const formRef = ref(null)                       // 用于点击登录按钮时验证规则
     const loading = ref(false)
+    
     // 定义提交按钮事件
     const onSubmit = () => {
         formRef.value.validate((valid,fields)=>{
@@ -88,29 +88,31 @@
                 return false
             }
             loading.value = true                    // 加载时 loading
-            login(form.username,form.password)      // 执行登录请求 axios
-            .then(res =>{                           // 登录请求成功
-                
-                // 提示登录成功
+
+            store.dispatch("login",form).then((res)=>{
+            // 提示登录成功
                 toast("登录成功")
-                        
-                // 存储 token 和用户相关信息
-                setToken(res.token) 
-
-                // 获取用户信息
-                getinfo().then(res2=>{
-                    store.commit("SET_USERINFO",res2)
-                    console.log(res2);
-                })
-
-                // 跳转到后台主页
+            // 跳转到后台主页
                 router.push("/")
-            })
-            .finally(()=>{
+            }).finally(()=>{
                 loading.value = false      // 结束加载时 loading
             })
         })
     }
+
+    // 监听回车事件
+    function onKeyUp(e){
+        if(e.key=="Enter") onSubmit()
+    }
+    // 添加键盘监听 (在页面加载成功时)
+    onMounted(()=>{
+        document.addEventListener("keyup",onKeyUp)
+    })
+    // 移除键盘监听 (在页面卸载时)
+    onBeforeUnmount(()=>{
+        document.removeEventListener("keyup",onKeyUp)
+    })
+    
 </script>
 
 <style scoped>
