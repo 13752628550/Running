@@ -189,7 +189,6 @@ export default defineConfig({
       },
     }
   },
-  
 })
 ```
 
@@ -2010,6 +2009,543 @@ const routes = [
 
 
 
+#### 简化代码
+
+```javascript
+// \src\composables\useManager.js
+import { ref, reactive } from 'vue'
+import { logout, updatepassword } from "~/api/manager"
+import { showModal, toast } from "~/composables/util"
+import { useRouter } from "vue-router"
+import { useStore } from "vuex"
+
+//用户变更密码函数
+export function useRepassword() {
+    const router = useRouter()
+    const store = useStore()
+    // 定义子组件接收变量
+    const formDrawerRef = ref(null)
+    const form = reactive({
+        oldpassword: "",
+        password: "",
+        repassword: ""
+    })
+
+    // 定义验证规则 
+    const rules = {
+        oldpassword: [
+            {
+                required: true,                 // 必填项
+                message: '旧密码不能为空',       // 提示
+                trigger: 'blur'                 // 规则触发条件
+            },
+        ],
+        password: [
+            {
+                required: true,                    // 必填项
+                message: '新密码不能为空',            // 提示
+                trigger: 'blur'                    // 规则触发条件
+            },
+        ],
+        repassword: [
+            {
+                required: true,                    // 必填项
+                message: '确认密码不能为空',            // 提示
+                trigger: 'blur'                    // 规则触发条件
+            },
+        ]
+    }
+
+    const formRef = ref(null)                       // 用于点击登录按钮时验证规则
+
+    // 定义提交按钮事件
+    const onSubmit = () => {
+        formRef.value.validate((valid, fields) => {
+            if (!valid) {
+                return false
+            }
+            formDrawerRef.value.showLoading()                    // 加载时 loading
+            updatepassword(form)
+                .then(res => {
+                    toast("修改密码成功，请重新登录")
+                    store.dispatch("logout")
+                    router.push("/login")
+                })
+                .finally(() => {
+                    formDrawerRef.value.hideLoading()
+                })
+        })
+    }
+    const openRepasswordForm = () => formDrawerRef.value.open()
+
+    return {
+        formDrawerRef,
+        form,
+        rules,
+        formRef,
+        onSubmit,
+        openRepasswordForm
+    }
+}
+
+// 定义用户登出
+export function useLogout() {
+    const router = useRouter()
+    const store = useStore()
+    // 退出登录按钮事件 
+    function handleLogout() {
+        showModal("是否要退出登录").then((res) => {
+            logout().finally(() => {
+                // 清除用户状态及 cookie
+                store.dispatch("logout")
+                // 跳转回登录页
+                router.push("/login")
+                // 提示退出登录成功
+                toast("退出登录成功")
+            })
+        }).catch()
+    }
+    return {
+        handleLogout
+    }
+}
+```
+
+* **简化头文件代码**
+
+```javascript
+// \src\layouts\components\FHeader.vue
+
+<script setup>
+    import { useFullscreen } from '@vueuse/core'   // 引入全屏组件 vueuse
+    import FormDrawer from "~/components/FormDrawer.vue"  // 引入抽屉组件
+    import { useRepassword, useLogout } from "~/composables/useManager"  // 引入退出登录和修改密码的函数
+    const { isFullscreen, toggle } = useFullscreen()  // 定义全屏执行事件
+    const {
+        formDrawerRef,
+        form,
+        rules,
+        formRef,
+        onSubmit,
+        openRepasswordForm
+    } = useRepassword()
+
+    const {
+        handleLogout
+    } = useLogout()
+
+    // 监听下拉菜单事件
+    const handleCommand =(c)=>{
+        switch (c) {
+            case "logout":
+                handleLogout()
+                break;
+            case "rePassword":
+                openRepasswordForm()
+                break;
+        }
+    }
+
+    // 刷新按钮事件
+    const handleRefresh=()=> location.reload()
+</script>
+```
+
+
+
+
+
+### 4. 侧边栏
+
+#### 主结构
+
+```vue
+<template>
+    <div class="f-menu">
+        <!-- 定义侧边栏 -->
+        <el-menu default-active="2" class="border-0" @select="handleSelect">
+            <!-- 遍历侧边栏菜单 -->
+            <template v-for ="(item,index) in asideMenus" :key="index">       
+                <!-- 1. 如有子菜单，执行此代码 -->
+                <el-sub-menu v-if="item.child && item.child.length > 0" :index="item.name">
+                    <!-- 1.1 定义菜单图标、标题 -->
+                    <template #title>
+                        <el-icon>
+                            <component :is="item.icon"></component>     
+                        </el-icon>
+                        <span>
+                            {{item.name}}
+                        </span>
+                    </template>
+                    <!-- 1.2 遍历子菜单 child 项，生成 child 图标、标题 -->
+                    <el-menu-item v-for="(item2,index2) in item.child" :key="index2" :index="item2.frontpath">
+                        <el-icon>
+                            <component :is="item2.icon"></component>
+                        </el-icon>
+                        <span>
+                            {{item2.name}}
+                        </span>
+                    </el-menu-item>
+                </el-sub-menu>
+                
+                <!-- 2.如不存在子菜单，执行此代码，不进行 child 遍历操作 -->
+                <el-menu-item v-else :index="item.frontpath" >
+                    <!-- 2.1 定义菜单图标、标题 -->
+                    <el-icon>
+                        <component :is="item.icon"></component>
+                    </el-icon>
+                    <span>
+                        {{item.name}}
+                    </span>
+                </el-menu-item>
+            </template>
+      </el-menu>
+    </div>
+</template>
+<script setup>
+    import { useRouter } from 'vue-router'
+    
+    const router = useRouter() 
+    // 定义菜单数组
+    const asideMenus = [
+        {
+            name: "后台面板",
+            icon: "help",
+            path: '/dashboard',
+            child: [
+                {
+                    name: "主控台",
+                    icon: "home-filled",
+                    frontpath: '/',
+                }
+            ],
+        }, 
+        {
+            name: "商城管理",
+            icon: "shopping-bag",
+            path: '/dashboard',
+            child: [
+                {
+                    name: "商品管理",
+                    icon: "shopping-cart-full",
+                    frontpath: '/goods/list',
+                }
+            ],
+        } 
+    ]
+
+    // 监听侧边栏点击事件
+    const handleSelect = (e)=>{
+        router.push(e)
+    }
+</script>
+<style scoped>
+    /***************************************************************************
+    *   侧边栏设置
+    *   1. 设置宽度为 250px
+    *   2. 设置距头部 64px
+    *   3. 设置距底部 0px
+    *   4. 设置距左部 0px
+    *   5. 设置是否滚动 overflow:auto
+    *   6. windi css 设置阴影 固定 背景 @apply shadow-md fixed bg-light-50
+    ****************************************************************************/
+    .f-menu{
+        width: 250px;
+        top: 64px;
+        bottom: 0;
+        left: 0;
+        overflow:auto;
+        @apply shadow-md fixed bg-light-50;
+    }
+</style>
+```
+
+
+
+#### 创建页面文件
+
+* 创建文件夹 (商城管理)
+
+  ```shell
+  # md  ~/src/goods/
+  ```
+
+* 创建文件 (商品管理)
+
+  ```shell
+  # copy con ~/src/goods/list.vue
+  ```
+
+
+
+#### 添加路由地址
+
+```javascript
+// src/router/index.js
+import GoodList from "~/pages/goods/list.vue"
+const routes = [
+    {
+        path: "/",
+        component: Admin,
+        // 子路由
+        children: [{
+            path: "/",
+            component: Index,
+            meta: { title: "后台首页" }
+        },
+        {
+            path: "/goods/list",
+            component: GoodList,
+            meta: { title: "商品管理" }
+        },
+        ]
+
+    }, {
+        path: "/login", component: Login, meta: { title: "登录页" }
+    }, {
+        path: '/:pathMatch(.*)*', name: 'NotFound', component: NotFound
+    }
+]
+```
+
+
+
+#### 侧边栏隐藏
+
+* 修改 vuex 添加侧边栏宽
+
+  ```javascript 
+  // ~/src/store/index.js
+  state() {
+          return {
+              // 侧边宽度保存
+              asideWidth: "250px"
+          }
+      },
+  
+  mutations: {
+          /*******************************************************
+           *  handleAsideWidth(state){}
+           *  作用：展开/缩起侧边栏 
+           *  操作：弹性修改侧边栏宽   
+           * ****************************************************/
+          handleAsideWidth(state) {
+              state.asideWidth = state.asideWidth == "250px" ? "64px" : "250px"
+          }
+      },
+  ```
+
+* 修改头部文件
+
+  ```vue
+  ~/src/layouts/components/FHeader.vue
+  <template>
+  	<el-icon class="icon-btn" @click="$store.commit('handleAsideWidth')">
+          <Fold v-if="$store.state.asideWidth == '250px'"/>
+          <Expand v-else/>
+      </el-icon>
+  </template>
+  ```
+
+* 修改侧边栏代码
+
+  ```vue
+  // ~/src/layouts/components/FMenu.vue
+  <template>
+  	<el-menu unique-opened :collapse="isCollapse" :collapse-transition="false">
+  </template>
+  <script setup>
+      import { useStore } from 'vuex';
+      const store = useStore()
+      // 是否折叠属性
+      const isCollapse = computed(() =>!(store.state.asideWidth == '250px') )
+  </script>
+  <style scoped>
+      .f-menu{
+          transition:all 0.2s;
+          width: 250px;
+          top: 64px;
+          bottom: 0;
+          left: 0;
+          overflow-y:auto;
+          overflow-x: hidden;
+          @apply shadow-md fixed bg-light-50;
+      }
+  </style>
+  ```
+
+* 修改整体结构
+
+  ```vue
+  // ~/src/layouts/admin.vue
+  <template>
+  	<el-container>
+          <el-aside :width="$store.state.asideWidth">       // 隐藏式整体结构缩进
+              <f-menu></f-menu>
+          </el-aside>
+  </template>
+  ```
+
+  
+
+
+
+### 5. 侧边栏动态菜单
+
+#### 选中和路由关联
+
+* **目标：**路由地址变化时，侧边根据新路由地址，菜单自动激活对应项
+* **语法：** **default-active**	页面加载时默认激活菜单的 index	string	—	—
+* **代码：**
+
+```vue
+// ~/src/layouts/components/FMenu.vue
+<template>
+	<el-menu :default-active="defaultActive">
+</template>
+<script setup>
+    import { useRoute } from 'vue-router'
+    // 菜单选中和路由关联
+    const defaultActive = ref(route.path)
+</script>    
+```
+
+
+
+#### 前后端交互菜单
+
+* **菜单公共存储建立**
+
+  ```javascript
+  // ~/src/store/index.js
+  state() {
+      return {
+          // 侧边栏菜单保存
+          menus: [],
+  
+          // 权限列表保存
+          ruleNames: []
+      }
+  },
+  
+  mutations: {
+      /*******************************************************
+       *  SET_MENUS(state,menus){}
+       *  作用：设置侧边栏菜单 
+       *  操作：将 api 请求数据存入 state.menus   
+       * ****************************************************/
+      SET_MENUS(state,menus){
+          state.menus = menus
+      },
+  
+      /*******************************************************
+       *  SET_RULENAMES(state,ruleNames){}
+       *  作用：设置用户权限 
+       *  操作：将 api 请求数据存入 state.ruleNames   
+       * ****************************************************/
+      SET_RULENAMES(state,ruleNames){
+          state.menus = menus
+      },
+  },
+  
+  actions: {
+      /*******************************************************    
+      *  getinfo(){} 
+      *  作用：获取当前登录用户信息，将信息存入 state.user 
+      *  操作：执行 api 请求中 getinfo() 函数取用户信息 
+      *        执行 mutations中 SET_USERINFO 把用户信息存储
+      *  注意：通过解构赋值 {commit} = store.commit
+      * ******************************************************/
+      getinfo({ commit }) {
+          return new Promise((resolve, reject) => {
+              getinfo().then((res) => {
+                  commit("SET_USERINFO", res)
+                  commit("SET_MENUS", res.menus)                 // 设置侧边栏菜单
+                  commit("SET_RULENAMES", res.ruleNames)         // 设置用户权限规则
+                  resolve(res)
+              }).catch(err => reject(err))
+          })
+      },
+  },    
+  ```
+
+* 修改侧边栏执行
+
+  ```javascript
+  // ~\src\layouts\components\FMenu.vue
+  <script setup>
+      //侧边栏数据加载
+  	const asideMenus = computed(()=>store.state.menus)
+  </script>
+  ```
+
+* 侧边栏滚动条隐藏
+
+  ```javascript
+  // ~\src\layouts\components\FMenu.vue
+  /***************************************************************************
+  *   1. 隐藏侧边栏滚动条   width: 0px
+  ****************************************************************************/
+  .f-menu::-webkit-scrollbar{ 
+      width: 0px;
+  }
+  ```
+
+
+
+#### 菜单路由动态添加
+
+* **目标：**根据动态菜单，自动生成路由
+
+* 将路由分成：
+
+  * 默认路由：固定不变
+  * 动态路由：根据用户自动生成
+
+  ```javascript
+  // ~/src/router/index.js
+  // 默认路由，所有用户共享
+  const routes = [{
+      path: "/",
+      name: "admin",
+      component: Admin,
+  }, {
+      path: "/login",
+      component: Login,
+      meta: { title: "登录页" }
+  }, {
+      path: '/:pathMatch(.*)*',
+      name: 'NotFound',
+      component: NotFound
+  }]
+  
+  // 动态路由，用于匹配菜单动态添加路由
+  const asyncRoutes = [{
+      path: "/",
+      name: "/",
+      component: Index,
+      meta: { title: "后台首页" }
+  }, {
+      path: "/goods/list",
+      name: "/goods/list",
+      component: GoodList,
+      meta: { title: "商品管理" }
+  }, {
+      path: "/category/list",
+      name: "/category/list",
+      component: CategoryList,
+      meta: { title: "分类列表" }
+  }]
+  ```
+
+  
+
+
+
+### 6. 标签导航栏
+
+**目标：**
+
 
 
 ## 项目结构
@@ -2095,6 +2631,7 @@ src/composables  ->
 	├── composables               # (folder) 路由定义文件夹
 	    ├── auth.js               # (file)   路由定义文件      
 	    ├── util.js               # (file)   路由定义文件
+	    ├── useManager.js         # (file)   用户管理工具 (useRepassword、useLogout)             
 	└── 	    
 ```
 
@@ -2140,7 +2677,8 @@ router/index.js ->  layouts/admin.vue -> layouts/components/xxx.vue
 ```css
 └── src
 	├── pages                    # (folder) 页面文件夹
-	    ├──                      # (folder) 路由定义文件       
+	    ├── goods                # (folder) 商城管理文件夹
+	         ├── list.vue        # (file)   商品管理页面文件    
 	    ├── 404.vue              # (file)   404 页面
  	    ├── index.vue            # (file)   主页面
 	    ├── login.vue            # (file)   登录页面

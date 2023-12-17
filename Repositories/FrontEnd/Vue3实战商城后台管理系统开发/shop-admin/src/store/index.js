@@ -7,7 +7,16 @@ const store = createStore({
     state() {
         return {
             // 用户信息保存
-            user: {}
+            user: {},
+
+            // 侧边宽度保存
+            asideWidth: "250px",
+
+            // 侧边栏菜单保存
+            menus: [],
+
+            // 权限列表保存
+            ruleNames: []
         }
     },
     mutations: {
@@ -18,7 +27,34 @@ const store = createStore({
          * ****************************************************/
         SET_USERINFO(state, user) {
             state.user = user
-        }
+        },
+
+        /*******************************************************
+         *  handleAsideWidth(state){}
+         *  作用：展开/缩起侧边栏 
+         *  操作：弹性修改侧边栏宽   
+         * ****************************************************/
+        handleAsideWidth(state) {
+            state.asideWidth = state.asideWidth == "250px" ? "64px" : "250px"
+        },
+
+        /*******************************************************
+         *  SET_MENUS(state,menus){}
+         *  作用：设置侧边栏菜单 
+         *  操作：将 api 请求数据存入 state.menus   
+         * ****************************************************/
+        SET_MENUS(state, menus) {
+            state.menus = menus
+        },
+
+        /*******************************************************
+         *  SET_RULENAMES(state,ruleNames){}
+         *  作用：设置用户权限 
+         *  操作：将 api 请求数据存入 state.ruleNames   
+         * ****************************************************/
+        SET_RULENAMES(state, ruleNames) {
+            state.ruleNames = ruleNames
+        },
     },
     actions: {
         /*******************************************************    
@@ -46,8 +82,10 @@ const store = createStore({
         * ******************************************************/
         getinfo({ commit }) {
             return new Promise((resolve, reject) => {
-                getinfo().then((res) => {
+                getinfo().then(res => {
                     commit("SET_USERINFO", res)
+                    commit("SET_MENUS", res.menus)
+                    commit("SET_RULENAMES", res.ruleNames)
                     resolve(res)
                 }).catch(err => reject(err))
             })

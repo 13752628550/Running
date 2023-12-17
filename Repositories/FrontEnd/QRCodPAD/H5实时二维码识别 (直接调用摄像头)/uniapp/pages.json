@@ -1,0 +1,57 @@
+{
+	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		{
+			"path": "pages/index/index",
+			"style": {
+				"navigationStyle": "custom"
+			}
+		}, {
+			"path": "pages/hou_one/hou_one",
+			"style": {
+				"navigationBarTitleText": "后_监听一次",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/hou_chixu/hou_chixu",
+			"style": {
+				"navigationBarTitleText": "后_持续监听",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/qian_one/qian_one",
+			"style": {
+				"navigationBarTitleText": "前_监听一次",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/qian_chixu/qian_chixu",
+			"style": {
+				"navigationBarTitleText": "前_持续监听",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/hou_balf/hou_balf",
+			"style": {
+				"navigationBarTitleText": "半屏扫码"
+			}
+
+		}, {
+			"path": "pages/hou_definition/hou_definition",
+			"style": {
+				"navigationBarTitleText": "高清识别"
+			}
+
+		}
+	],
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "H5调用摄像头_mumu插件",
+		"navigationBarBackgroundColor": "#F8F8F8",
+		"backgroundColor": "#F8F8F8",
+		"navigationStyle": "custom"
+	}
+}

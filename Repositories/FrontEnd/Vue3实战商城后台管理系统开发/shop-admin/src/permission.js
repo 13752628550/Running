@@ -1,4 +1,4 @@
-import router from "~/router"
+import { router, addRoutes } from "~/router"
 import { getToken } from "~/composables/auth"
 import { toast, showFullLoading, hideFullLoading } from "~/composables/util"
 import store from "./store"
@@ -35,8 +35,11 @@ router.beforeEach(async (to, from, next) => {
     *  规则： token 数据正常存在 
     *  操作： 执行 getinfo 把用户信息存储在 vuex 共享当中
     * *************************************************/
+    let hasNewRoutes = false
     if (token) {
-        await store.dispatch("getinfo")
+        let { menus } = await store.dispatch("getinfo")
+        // 动态添加路由
+        hasNewRoutes = addRoutes(menus)
     }
 
 
@@ -46,7 +49,7 @@ router.beforeEach(async (to, from, next) => {
     // 设置页面标题
     let title = (to.meta.title ? to.meta.title : "") + "-地莎编程商城后台" // to.meta.title 有数据则设置没有则清空
     document.title = title
-    next()
+    hasNewRoutes ? next(to.fullPath) : next()
 })
 
 

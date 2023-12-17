@@ -1,0 +1,17 @@
+{
+  "name": "normal",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "vuepress": "^1.9.10"
+  },
+  "scripts": {
+    "docs:dev": "vuepress dev docs --temp .temp",
+    "docs:build": "vuepress build docs"
+  },
+  "dependencies": {
+    "@vuepress/plugin-debug": "^2.0.0-alpha.6",
+    "vuepress-sidebar-atuo": "^1.0.4"
+  }
+}

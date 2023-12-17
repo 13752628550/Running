@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" href="/favicon.ico" />
+  <meta name="viewport"
+    content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <title>调用摄像头识别二维码</title>
+
+  <!-- 移动端输出错误 -->
+  <script type="text/javascript" src="//wap.cmread.com/rbc/t/content/repository/ues/js/s109/vconsole.js"></script>
+  <script type="text/javascript">
+    var vConsole = new VConsole();
+  </script>
+
+  <link rel="stylesheet" href="./css/style.css">
+  <script src="./js/flexible.js"></script>
+
+</head>
+
+<body>
+  <div id="mumuQrcode"></div>
+
+  <script src="./mumu-qrcode/index.js"></script>
+  <script>
+    new MumuQrcode({ definition: true }, (code) => {
+      console.log(code)
+      alert(code)
+    })
+  </script>
+
+</body>
+
+</html>

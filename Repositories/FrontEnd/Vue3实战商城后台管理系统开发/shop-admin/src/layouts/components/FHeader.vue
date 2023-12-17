@@ -10,8 +10,9 @@
         </span>
 
         <!-- 头部折叠按钮 -->
-        <el-icon class="icon-btn">
-            <Fold />
+        <el-icon class="icon-btn" @click="$store.commit('handleAsideWidth')">
+            <Fold v-if="$store.state.asideWidth == '250px'"/>
+            <Expand v-else/>
         </el-icon>
         
         <!-- 头部刷新按钮 -->
@@ -87,78 +88,22 @@
 </template>
 
 <script setup>
-    import { logout,updatepassword } from "~/api/manager"
-    import { showModal,toast } from "~/composables/util"
-    import { useRouter } from "vue-router"
-    import { useStore } from "vuex"
     import { useFullscreen } from '@vueuse/core'   // 引入全屏组件 vueuse
-    import { ref,reactive } from 'vue'
     import FormDrawer from "~/components/FormDrawer.vue"  // 引入抽屉组件
-
+    import { useRepassword, useLogout } from "~/composables/useManager"  // 引入退出登录和修改密码的函数
     const { isFullscreen, toggle } = useFullscreen()  // 定义全屏执行事件
-    const router = useRouter()
-    const store = useStore()
+    const {
+        formDrawerRef,
+        form,
+        rules,
+        formRef,
+        onSubmit,
+        openRepasswordForm
+    } = useRepassword()
 
-    
-    // 定义子组件接收变量
-    const formDrawerRef = ref(null)
-    const form = reactive({
-        oldpassword:"",
-        password:"",
-        repassword:""
-    })
-
-    // 定义验证规则 
-    const rules = {
-        oldpassword:[
-            {
-                required: true,                 // 必填项
-                message: '旧密码不能为空',       // 提示
-                trigger: 'blur'                 // 规则触发条件
-            },
-        ],
-        password:[
-            {
-                required: true,                    // 必填项
-                message: '新密码不能为空',            // 提示
-                trigger: 'blur'                    // 规则触发条件
-            },
-        ],
-        repassword:[
-            {
-                required: true,                    // 必填项
-                message: '确认密码不能为空',            // 提示
-                trigger: 'blur'                    // 规则触发条件
-            },
-        ]
-    }
-    
-    const formRef = ref(null)                       // 用于点击登录按钮时验证规则
-    
-    
-    // 定义提交按钮事件
-    const onSubmit = () => {
-        formRef.value.validate((valid,fields)=>{
-            if(!valid){
-                return false
-            }
-            formDrawerRef.value.showLoading()                    // 加载时 loading
-            updatepassword(form)
-            .then(res=>{
-                toast("修改密码成功，请重新登录")
-                store.dispatch("logout")
-                router.push("/login")
-            })
-            .finally(()=>{
-                formDrawerRef.value.hideLoading()
-            })
-           
-        })
-    }
-
-    function useRepassword(){
-        
-    }
+    const {
+        handleLogout
+    } = useLogout()
 
     // 监听下拉菜单事件
     const handleCommand =(c)=>{
@@ -167,28 +112,17 @@
                 handleLogout()
                 break;
             case "rePassword":
-                formDrawerRef.value.open()
+                openRepasswordForm()
                 break;
         }
     }
 
     // 刷新按钮事件
+    
     const handleRefresh=()=> location.reload()
 
-    // 退出登录按钮事件 
-    function handleLogout(){
-        showModal("是否要退出登录").then((res)=>{
-            logout().finally(()=>{
-                // 清除用户状态及 cookie
-                store.dispatch("logout")
-                // 跳转回登录页
-                router.push("/login")
-                // 提示退出登录成功
-                toast("退出登录成功")
-            })
-        }).catch()
-    }
 </script>
+
 
 <style>
     /************************************************************

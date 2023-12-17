@@ -1,0 +1,19 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+#app {
+  font-size: 0.16rem;
+}
+#app .btnBox {
+  display: flex;
+  justify-content: space-around;
+  padding: 0.2rem;
+}
+#app .btnBox a{
+  padding: 0.4rem;
+  color: aliceblue;
+  background-color: #015cf2;
+  display: block;
+}
