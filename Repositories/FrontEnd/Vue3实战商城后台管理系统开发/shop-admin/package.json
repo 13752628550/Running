@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "fgh": "vite",
     "build": "vite build",
     "preview": "vite preview"
   },
@@ -13,7 +13,9 @@
     "@vueuse/core": "^10.5.0",
     "@vueuse/integrations": "^10.3.0",
     "axios": "^1.4.0",
+    "echarts": "^5.4.3",
     "element-plus": "^2.3.9",
+    "gsap": "^3.12.4",
     "nprogress": "^0.2.0",
     "universal-cookie": "^6.0.1",
     "vue": "^3.3.4",

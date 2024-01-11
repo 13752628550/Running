@@ -4,6 +4,7 @@ import { toast, showFullLoading, hideFullLoading } from "~/composables/util"
 import store from "./store"
 
 // 全局前置守卫
+let hasGetInfo = false;
 router.beforeEach(async (to, from, next) => {
     // 显示 loading
     showFullLoading()
@@ -30,16 +31,18 @@ router.beforeEach(async (to, from, next) => {
         return next({ path: from.path ? from.path : "/" })
     }
 
+
     /**************************************************    
-    *  登录成功了获取用户信息
+    *  登录成功了，自动获取用户信息，存储在vuex当中共享
     *  规则： token 数据正常存在 
     *  操作： 执行 getinfo 把用户信息存储在 vuex 共享当中
     * *************************************************/
     let hasNewRoutes = false
-    if (token) {
-        let { menus } = await store.dispatch("getinfo")
+    if (token && !hasGetInfo) {
+        let { menus } = await store.dispatch("getinfo");
+        hasGetInfo = true;
         // 动态添加路由
-        hasNewRoutes = addRoutes(menus)
+        hasNewRoutes = addRoutes(menus);
     }
 
 
@@ -47,11 +50,11 @@ router.beforeEach(async (to, from, next) => {
 
 
     // 设置页面标题
-    let title = (to.meta.title ? to.meta.title : "") + "-地莎编程商城后台" // to.meta.title 有数据则设置没有则清空
-    document.title = title
-    hasNewRoutes ? next(to.fullPath) : next()
-})
+    let title = (to.meta.title ? to.meta.title : "") + "-帝莎编程商城后台";
+    document.title = title;
 
+    hasNewRoutes ? next(to.fullPath) : next();
+});
 
 // 全局后置守卫
 router.afterEach((to, from) => {

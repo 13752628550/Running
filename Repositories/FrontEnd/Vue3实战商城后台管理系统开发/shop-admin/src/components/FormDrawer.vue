@@ -33,11 +33,11 @@
         },                         
         destroyOnClose:{          // 关闭时是否销毁
             type:Boolean,
-            default:"false"
+            default:false
         },
         closeOnClickModal:{        // 点击遮罩层是否关闭
             type:Boolean,
-            default:"false"
+            default:false
         },
         confirmText:{              // 提交按钮文字
             type:String,

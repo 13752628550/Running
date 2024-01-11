@@ -9,18 +9,6 @@ import GlobalLayout from "H:\\Design\\Running\\Repositories\\FrontEnd\\VuePress\
 injectComponentOption(GlobalLayout, 'mixins', rootMixins)
 export const routes = [
   {
-    name: "v-38d5dac6",
-    path: "/",
-    component: GlobalLayout,
-    beforeEnter: (to, from, next) => {
-      ensureAsyncComponentsLoaded("Layout", "v-38d5dac6").then(next)
-    },
-  },
-  {
-    path: "/index.html",
-    redirect: "/"
-  },
-  {
     name: "v-62161595",
     path: "/contact.html",
     component: GlobalLayout,
@@ -34,6 +22,22 @@ export const routes = [
     component: GlobalLayout,
     beforeEnter: (to, from, next) => {
       ensureAsyncComponentsLoaded("Layout", "v-51ce0b16").then(next)
+    },
+  },
+  {
+    name: "v-5eb01e41",
+    path: "/en/Mails/one.html",
+    component: GlobalLayout,
+    beforeEnter: (to, from, next) => {
+      ensureAsyncComponentsLoaded("Layout", "v-5eb01e41").then(next)
+    },
+  },
+  {
+    name: "v-1c3e01f5",
+    path: "/en/Mails/two.html",
+    component: GlobalLayout,
+    beforeEnter: (to, from, next) => {
+      ensureAsyncComponentsLoaded("Layout", "v-1c3e01f5").then(next)
     },
   },
   {
@@ -61,22 +65,6 @@ export const routes = [
     redirect: "/en/Guide/"
   },
   {
-    name: "v-5eb01e41",
-    path: "/en/Mails/one.html",
-    component: GlobalLayout,
-    beforeEnter: (to, from, next) => {
-      ensureAsyncComponentsLoaded("Layout", "v-5eb01e41").then(next)
-    },
-  },
-  {
-    name: "v-1c3e01f5",
-    path: "/en/Mails/two.html",
-    component: GlobalLayout,
-    beforeEnter: (to, from, next) => {
-      ensureAsyncComponentsLoaded("Layout", "v-1c3e01f5").then(next)
-    },
-  },
-  {
     name: "v-94152188",
     path: "/en/Office/Excel/FAQ/",
     component: GlobalLayout,
@@ -97,6 +85,26 @@ export const routes = [
     },
   },
   {
+    name: "v-a9aaa0ca",
+    path: "/en/Office/Excel/FAQ/three.html",
+    component: GlobalLayout,
+    beforeEnter: (to, from, next) => {
+      ensureAsyncComponentsLoaded("Layout", "v-a9aaa0ca").then(next)
+    },
+  },
+  {
+    name: "v-38d5dac6",
+    path: "/",
+    component: GlobalLayout,
+    beforeEnter: (to, from, next) => {
+      ensureAsyncComponentsLoaded("Layout", "v-38d5dac6").then(next)
+    },
+  },
+  {
+    path: "/index.html",
+    redirect: "/"
+  },
+  {
     name: "v-ebea79fc",
     path: "/en/Office/PPT/FAQ/",
     component: GlobalLayout,
@@ -107,14 +115,6 @@ export const routes = [
   {
     path: "/en/Office/PPT/FAQ/index.html",
     redirect: "/en/Office/PPT/FAQ/"
-  },
-  {
-    name: "v-a9aaa0ca",
-    path: "/en/Office/Excel/FAQ/three.html",
-    component: GlobalLayout,
-    beforeEnter: (to, from, next) => {
-      ensureAsyncComponentsLoaded("Layout", "v-a9aaa0ca").then(next)
-    },
   },
   {
     name: "v-f78f828a",
@@ -131,6 +131,18 @@ export const routes = [
     beforeEnter: (to, from, next) => {
       ensureAsyncComponentsLoaded("Layout", "v-ffd6740e").then(next)
     },
+  },
+  {
+    name: "v-29baec3c",
+    path: "/en/Office/Word/FAQ/",
+    component: GlobalLayout,
+    beforeEnter: (to, from, next) => {
+      ensureAsyncComponentsLoaded("Layout", "v-29baec3c").then(next)
+    },
+  },
+  {
+    path: "/en/Office/Word/FAQ/index.html",
+    redirect: "/en/Office/Word/FAQ/"
   },
   {
     name: "v-4c954100",
@@ -153,23 +165,19 @@ export const routes = [
     },
   },
   {
-    name: "v-29baec3c",
-    path: "/en/Office/Word/FAQ/",
-    component: GlobalLayout,
-    beforeEnter: (to, from, next) => {
-      ensureAsyncComponentsLoaded("Layout", "v-29baec3c").then(next)
-    },
-  },
-  {
-    path: "/en/Office/Word/FAQ/index.html",
-    redirect: "/en/Office/Word/FAQ/"
-  },
-  {
     name: "v-3c88e961",
     path: "/en/Office/Word/FAQ/three.html",
     component: GlobalLayout,
     beforeEnter: (to, from, next) => {
       ensureAsyncComponentsLoaded("Layout", "v-3c88e961").then(next)
+    },
+  },
+  {
+    name: "v-c6d79856",
+    path: "/en/Office/three.html",
+    component: GlobalLayout,
+    beforeEnter: (to, from, next) => {
+      ensureAsyncComponentsLoaded("Layout", "v-c6d79856").then(next)
     },
   },
   {
@@ -181,12 +189,16 @@ export const routes = [
     },
   },
   {
-    name: "v-c6d79856",
-    path: "/en/Office/three.html",
+    name: "v-5831d189",
+    path: "/en/",
     component: GlobalLayout,
     beforeEnter: (to, from, next) => {
-      ensureAsyncComponentsLoaded("Layout", "v-c6d79856").then(next)
+      ensureAsyncComponentsLoaded("Layout", "v-5831d189").then(next)
     },
+  },
+  {
+    path: "/en/index.html",
+    redirect: "/en/"
   },
   {
     name: "v-17d71a7c",
@@ -211,26 +223,6 @@ export const routes = [
   {
     path: "/zh/Mails/index.html",
     redirect: "/zh/Mails/"
-  },
-  {
-    name: "v-5675e412",
-    path: "/zh/Mails/one.html",
-    component: GlobalLayout,
-    beforeEnter: (to, from, next) => {
-      ensureAsyncComponentsLoaded("Layout", "v-5675e412").then(next)
-    },
-  },
-  {
-    name: "v-5831d189",
-    path: "/en/",
-    component: GlobalLayout,
-    beforeEnter: (to, from, next) => {
-      ensureAsyncComponentsLoaded("Layout", "v-5831d189").then(next)
-    },
-  },
-  {
-    path: "/en/index.html",
-    redirect: "/en/"
   },
   {
     name: "v-db5a1caa",
@@ -269,6 +261,22 @@ export const routes = [
     redirect: "/zh/Office/678%20-%20%E5%89%AF%E6%9C%AC.html"
   },
   {
+    name: "v-5675e412",
+    path: "/zh/Mails/one.html",
+    component: GlobalLayout,
+    beforeEnter: (to, from, next) => {
+      ensureAsyncComponentsLoaded("Layout", "v-5675e412").then(next)
+    },
+  },
+  {
+    name: "v-6c2b2d15",
+    path: "/zh/Office/678.html",
+    component: GlobalLayout,
+    beforeEnter: (to, from, next) => {
+      ensureAsyncComponentsLoaded("Layout", "v-6c2b2d15").then(next)
+    },
+  },
+  {
     name: "v-0fa9db67",
     path: "/zh/Office/Excel/",
     component: GlobalLayout,
@@ -281,27 +289,11 @@ export const routes = [
     redirect: "/zh/Office/Excel/"
   },
   {
-    name: "v-6c2b2d15",
-    path: "/zh/Office/678.html",
-    component: GlobalLayout,
-    beforeEnter: (to, from, next) => {
-      ensureAsyncComponentsLoaded("Layout", "v-6c2b2d15").then(next)
-    },
-  },
-  {
     name: "v-27d5efe8",
     path: "/zh/Office/Excel/three.html",
     component: GlobalLayout,
     beforeEnter: (to, from, next) => {
       ensureAsyncComponentsLoaded("Layout", "v-27d5efe8").then(next)
-    },
-  },
-  {
-    name: "v-767f9b98",
-    path: "/zh/Office/Excel/four.html",
-    component: GlobalLayout,
-    beforeEnter: (to, from, next) => {
-      ensureAsyncComponentsLoaded("Layout", "v-767f9b98").then(next)
     },
   },
   {
@@ -321,6 +313,14 @@ export const routes = [
     },
   },
   {
+    name: "v-767f9b98",
+    path: "/zh/Office/Excel/four.html",
+    component: GlobalLayout,
+    beforeEnter: (to, from, next) => {
+      ensureAsyncComponentsLoaded("Layout", "v-767f9b98").then(next)
+    },
+  },
+  {
     name: "v-1546c009",
     path: "/zh/Office/Word/",
     component: GlobalLayout,
@@ -331,6 +331,18 @@ export const routes = [
   {
     path: "/zh/Office/Word/index.html",
     redirect: "/zh/Office/Word/"
+  },
+  {
+    name: "v-49025c26",
+    path: "/zh/Office/PPT/",
+    component: GlobalLayout,
+    beforeEnter: (to, from, next) => {
+      ensureAsyncComponentsLoaded("Layout", "v-49025c26").then(next)
+    },
+  },
+  {
+    path: "/zh/Office/PPT/index.html",
+    redirect: "/zh/Office/PPT/"
   },
   {
     name: "v-636156b8",
@@ -371,18 +383,6 @@ export const routes = [
   {
     path: "/zh/index.html",
     redirect: "/zh/"
-  },
-  {
-    name: "v-49025c26",
-    path: "/zh/Office/PPT/",
-    component: GlobalLayout,
-    beforeEnter: (to, from, next) => {
-      ensureAsyncComponentsLoaded("Layout", "v-49025c26").then(next)
-    },
-  },
-  {
-    path: "/zh/Office/PPT/index.html",
-    redirect: "/zh/Office/PPT/"
   },
   {
     path: '*',

@@ -84,6 +84,7 @@ const store = createStore({
             return new Promise((resolve, reject) => {
                 getinfo().then(res => {
                     commit("SET_USERINFO", res)
+                    // console.log(res.menus);
                     commit("SET_MENUS", res.menus)
                     commit("SET_RULENAMES", res.ruleNames)
                     resolve(res)

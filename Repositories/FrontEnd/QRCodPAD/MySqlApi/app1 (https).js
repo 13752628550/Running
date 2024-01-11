@@ -17,13 +17,19 @@ db.connect();
 app.get('/xppcx', (req, res) => {
     const sqlView = req.query.sqlView
     const sqlRNumber = req.query.RNumber;
+    let query1 = "";
     if (sqlView == undefined || sqlRNumber == undefined) {
         res.send("Please enter the sqlView and RNumber")
         return;
     }
 
     console.log(`[时间]：${new Date().toLocaleString()}   [视图]：${sqlView}  [R番号]：${sqlRNumber}`);
-    const query1 = "SELECT * FROM " + sqlView + " WHERE item_no = " + "'" + sqlRNumber + "'"
+
+    if (sqlView == "V_Prod_StockMoveInfo") {
+        query1 = "SELECT * FROM " + sqlView + " WHERE item_no = " + "'" + sqlRNumber + "'" + "ORDER BY sys_date_yymmdd DESC"
+    } else {
+        query1 = "SELECT * FROM " + sqlView + " WHERE item_no = " + "'" + sqlRNumber + "'"
+    }
     const results = db.query(query1, (err, result) => {
         if (err) {
             res.send(err.message)
@@ -52,11 +58,14 @@ app.get('/login', (req, res) => {
     // });
 })
 const port = 3000;
-const privateKey = fs.readFileSync('./cert/new_server.key');
-const certificate = fs.readFileSync('./cert/server.crt');
-https.createServer({
-    key: privateKey,
-    cert: certificate,
-}, app).listen(port, () => {
-    console.log(`Example app listening at https://localhost:${3000}`);
+// const privateKey = fs.readFileSync('./cert/new_server.key');
+// const certificate = fs.readFileSync('./cert/server.crt');
+// https.createServer({
+//     key: privateKey,
+//     cert: certificate,
+// }, app).listen(port, () => {
+//     console.log(`Example app listening at https://localhost:${3000}`);
+// });
+app.listen(port, () => {
+    console.log(`Example app listening at http://localhost:${3000}`);
 });

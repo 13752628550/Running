@@ -8,36 +8,6 @@ export const siteData = {
   "headTags": [],
   "pages": [
     {
-      "title": "Home",
-      "frontmatter": {
-        "home": true,
-        "heroImage": "/assets/img/hero.png",
-        "heroText": "系统信息发布平台",
-        "tagline": "天津三美电机",
-        "actionText": "快速上手 →",
-        "actionLink": "/zh/Guide/",
-        "features": [
-          {
-            "title": "发布通知",
-            "details": "此平台用于发布系统相关通知、联络。"
-          },
-          {
-            "title": "办公软件操作",
-            "details": "分享邮件、Office 办公软件常见操作方法，汇总操作技巧。"
-          },
-          {
-            "title": "Windows 操作系统",
-            "details": "操作系统常见问题、技巧总结。"
-          }
-        ],
-        "footer": "Mitsumi | Copyright ©  管理部-企画课-系统"
-      },
-      "regularPath": "/",
-      "relativePath": "README.md",
-      "key": "v-38d5dac6",
-      "path": "/"
-    },
-    {
       "title": "关于我 1",
       "frontmatter": {},
       "regularPath": "/contact.html",
@@ -118,20 +88,6 @@ export const siteData = {
           "slug": "一级标题-1-4"
         }
       ]
-    },
-    {
-      "frontmatter": {},
-      "regularPath": "/en/Mails/",
-      "relativePath": "en/Mails/README.md",
-      "key": "v-4af31a5c",
-      "path": "/en/Mails/"
-    },
-    {
-      "frontmatter": {},
-      "regularPath": "/en/Guide/",
-      "relativePath": "en/Guide/README.md",
-      "key": "v-177c5348",
-      "path": "/en/Guide/"
     },
     {
       "title": "关于我 one",
@@ -215,6 +171,20 @@ export const siteData = {
     },
     {
       "frontmatter": {},
+      "regularPath": "/en/Mails/",
+      "relativePath": "en/Mails/README.md",
+      "key": "v-4af31a5c",
+      "path": "/en/Mails/"
+    },
+    {
+      "frontmatter": {},
+      "regularPath": "/en/Guide/",
+      "relativePath": "en/Guide/README.md",
+      "key": "v-177c5348",
+      "path": "/en/Guide/"
+    },
+    {
+      "frontmatter": {},
       "regularPath": "/en/Office/Excel/FAQ/",
       "relativePath": "en/Office/Excel/FAQ/README.md",
       "key": "v-94152188",
@@ -226,13 +196,6 @@ export const siteData = {
       "relativePath": "en/Office/Excel/FAQ/four.md",
       "key": "v-dcd96482",
       "path": "/en/Office/Excel/FAQ/four.html"
-    },
-    {
-      "frontmatter": {},
-      "regularPath": "/en/Office/PPT/FAQ/",
-      "relativePath": "en/Office/PPT/FAQ/README.md",
-      "key": "v-ebea79fc",
-      "path": "/en/Office/PPT/FAQ/"
     },
     {
       "title": "关于我 three",
@@ -273,6 +236,43 @@ export const siteData = {
           "slug": "一级标题-1-4"
         }
       ]
+    },
+    {
+      "title": "Home",
+      "frontmatter": {
+        "home": true,
+        "heroImage": "/assets/img/hero.png",
+        "heroText": "系统信息发布平台",
+        "tagline": "天津三美电机",
+        "actionText": "快速上手 →",
+        "actionLink": "/zh/Guide/",
+        "features": [
+          {
+            "title": "发布通知",
+            "details": "此平台用于发布系统相关通知、联络。"
+          },
+          {
+            "title": "办公软件操作",
+            "details": "分享邮件、Office 办公软件常见操作方法，汇总操作技巧。"
+          },
+          {
+            "title": "Windows 操作系统",
+            "details": "操作系统常见问题、技巧总结。"
+          }
+        ],
+        "footer": "Mitsumi | Copyright ©  管理部-企画课-系统"
+      },
+      "regularPath": "/",
+      "relativePath": "README.md",
+      "key": "v-38d5dac6",
+      "path": "/"
+    },
+    {
+      "frontmatter": {},
+      "regularPath": "/en/Office/PPT/FAQ/",
+      "relativePath": "en/Office/PPT/FAQ/README.md",
+      "key": "v-ebea79fc",
+      "path": "/en/Office/PPT/FAQ/"
     },
     {
       "title": "关于我 three",
@@ -336,6 +336,13 @@ export const siteData = {
     },
     {
       "frontmatter": {},
+      "regularPath": "/en/Office/Word/FAQ/",
+      "relativePath": "en/Office/Word/FAQ/README.md",
+      "key": "v-29baec3c",
+      "path": "/en/Office/Word/FAQ/"
+    },
+    {
+      "frontmatter": {},
       "regularPath": "/en/Office/",
       "relativePath": "en/Office/README.md",
       "key": "v-4c954100",
@@ -347,13 +354,6 @@ export const siteData = {
       "relativePath": "en/Office/Word/FAQ/four.md",
       "key": "v-7cda7522",
       "path": "/en/Office/Word/FAQ/four.html"
-    },
-    {
-      "frontmatter": {},
-      "regularPath": "/en/Office/Word/FAQ/",
-      "relativePath": "en/Office/Word/FAQ/README.md",
-      "key": "v-29baec3c",
-      "path": "/en/Office/Word/FAQ/"
     },
     {
       "title": "关于我 three",
@@ -394,13 +394,6 @@ export const siteData = {
           "slug": "一级标题-1-4"
         }
       ]
-    },
-    {
-      "frontmatter": {},
-      "regularPath": "/en/Office/four.html",
-      "relativePath": "en/Office/four.md",
-      "key": "v-761602bb",
-      "path": "/en/Office/four.html"
     },
     {
       "title": "关于我 three",
@@ -444,57 +437,10 @@ export const siteData = {
     },
     {
       "frontmatter": {},
-      "regularPath": "/zh/Guide/",
-      "relativePath": "zh/Guide/README.md",
-      "key": "v-17d71a7c",
-      "path": "/zh/Guide/"
-    },
-    {
-      "frontmatter": {},
-      "regularPath": "/zh/Mails/",
-      "relativePath": "zh/Mails/README.md",
-      "key": "v-6e885e7c",
-      "path": "/zh/Mails/"
-    },
-    {
-      "title": "关于我 one",
-      "frontmatter": {},
-      "regularPath": "/zh/Mails/one.html",
-      "relativePath": "zh/Mails/one.md",
-      "key": "v-5675e412",
-      "path": "/zh/Mails/one.html",
-      "headers": [
-        {
-          "level": 2,
-          "title": "关于我 one",
-          "slug": "关于我-one"
-        },
-        {
-          "level": 2,
-          "title": "一级标题 1",
-          "slug": "一级标题-1"
-        },
-        {
-          "level": 3,
-          "title": "1. 二级标题",
-          "slug": "_1-二级标题"
-        },
-        {
-          "level": 2,
-          "title": "一级标题 1",
-          "slug": "一级标题-1-2"
-        },
-        {
-          "level": 2,
-          "title": "一级标题 1",
-          "slug": "一级标题-1-3"
-        },
-        {
-          "level": 2,
-          "title": "一级标题 1",
-          "slug": "一级标题-1-4"
-        }
-      ]
+      "regularPath": "/en/Office/four.html",
+      "relativePath": "en/Office/four.md",
+      "key": "v-761602bb",
+      "path": "/en/Office/four.html"
     },
     {
       "title": "Home",
@@ -525,6 +471,20 @@ export const siteData = {
       "relativePath": "en/README.md",
       "key": "v-5831d189",
       "path": "/en/"
+    },
+    {
+      "frontmatter": {},
+      "regularPath": "/zh/Guide/",
+      "relativePath": "zh/Guide/README.md",
+      "key": "v-17d71a7c",
+      "path": "/zh/Guide/"
+    },
+    {
+      "frontmatter": {},
+      "regularPath": "/zh/Mails/",
+      "relativePath": "zh/Mails/README.md",
+      "key": "v-6e885e7c",
+      "path": "/zh/Mails/"
     },
     {
       "title": "关于我 two",
@@ -614,12 +574,52 @@ export const siteData = {
       ]
     },
     {
+      "title": "关于我 one",
+      "frontmatter": {},
+      "regularPath": "/zh/Mails/one.html",
+      "relativePath": "zh/Mails/one.md",
+      "key": "v-5675e412",
+      "path": "/zh/Mails/one.html",
+      "headers": [
+        {
+          "level": 2,
+          "title": "关于我 one",
+          "slug": "关于我-one"
+        },
+        {
+          "level": 2,
+          "title": "一级标题 1",
+          "slug": "一级标题-1"
+        },
+        {
+          "level": 3,
+          "title": "1. 二级标题",
+          "slug": "_1-二级标题"
+        },
+        {
+          "level": 2,
+          "title": "一级标题 1",
+          "slug": "一级标题-1-2"
+        },
+        {
+          "level": 2,
+          "title": "一级标题 1",
+          "slug": "一级标题-1-3"
+        },
+        {
+          "level": 2,
+          "title": "一级标题 1",
+          "slug": "一级标题-1-4"
+        }
+      ]
+    },
+    {
       "title": "关于我 three",
       "frontmatter": {},
-      "regularPath": "/zh/Office/Excel/",
-      "relativePath": "zh/Office/Excel/README.md",
-      "key": "v-0fa9db67",
-      "path": "/zh/Office/Excel/",
+      "regularPath": "/zh/Office/678.html",
+      "relativePath": "zh/Office/678.md",
+      "key": "v-6c2b2d15",
+      "path": "/zh/Office/678.html",
       "headers": [
         {
           "level": 2,
@@ -656,10 +656,10 @@ export const siteData = {
     {
       "title": "关于我 three",
       "frontmatter": {},
-      "regularPath": "/zh/Office/678.html",
-      "relativePath": "zh/Office/678.md",
-      "key": "v-6c2b2d15",
-      "path": "/zh/Office/678.html",
+      "regularPath": "/zh/Office/Excel/",
+      "relativePath": "zh/Office/Excel/README.md",
+      "key": "v-0fa9db67",
+      "path": "/zh/Office/Excel/",
       "headers": [
         {
           "level": 2,
@@ -732,13 +732,6 @@ export const siteData = {
           "slug": "一级标题-1-4"
         }
       ]
-    },
-    {
-      "frontmatter": {},
-      "regularPath": "/zh/Office/Excel/four.html",
-      "relativePath": "zh/Office/Excel/four.md",
-      "key": "v-767f9b98",
-      "path": "/zh/Office/Excel/four.html"
     },
     {
       "title": "关于我 three",
@@ -816,6 +809,13 @@ export const siteData = {
       ]
     },
     {
+      "frontmatter": {},
+      "regularPath": "/zh/Office/Excel/four.html",
+      "relativePath": "zh/Office/Excel/four.md",
+      "key": "v-767f9b98",
+      "path": "/zh/Office/Excel/four.html"
+    },
+    {
       "title": "热爱生活，喜欢睡觉",
       "frontmatter": {},
       "regularPath": "/zh/Office/Word/",
@@ -854,6 +854,13 @@ export const siteData = {
           "slug": "一级标题-1-4"
         }
       ]
+    },
+    {
+      "frontmatter": {},
+      "regularPath": "/zh/Office/PPT/",
+      "relativePath": "zh/Office/PPT/README.md",
+      "key": "v-49025c26",
+      "path": "/zh/Office/PPT/"
     },
     {
       "title": "关于我 three",
@@ -948,13 +955,6 @@ export const siteData = {
       "relativePath": "zh/README.md",
       "key": "v-83f6552e",
       "path": "/zh/"
-    },
-    {
-      "frontmatter": {},
-      "regularPath": "/zh/Office/PPT/",
-      "relativePath": "zh/Office/PPT/README.md",
-      "key": "v-49025c26",
-      "path": "/zh/Office/PPT/"
     }
   ],
   "themeConfig": {
