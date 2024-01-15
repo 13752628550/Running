@@ -8,8 +8,8 @@
                 </el-button>  
             </el-header>
         <el-container>
-            <ImageAside ref="ImageAsideRef"/>
-            <ImageMain />
+            <ImageAside ref="ImageAsideRef" @change="handleAsideChange" />
+            <ImageMain ref="ImageMainRef" />
         </el-container>
     </el-container>
 </template>
@@ -19,11 +19,12 @@
     import ImageMain from "~/components/ImageMain.vue"
     const windowHeight = window.innerHeight || document.body.clientHeight    // 获取浏览器可视区域高度
     const h = windowHeight - 65 - 44 - 40
-
-    
-    
     const ImageAsideRef = ref(null)
+    
+    
     const handleOpenCreate = ()=>ImageAsideRef.value.handleCreate()
+    const ImageMainRef = ref(null)
+    const handleAsideChange= (image_class_id)=> ImageMainRef.value.LoadData(image_class_id)
 </script>
 <style scoped>
     .image-header{

@@ -4090,8 +4090,6 @@ app.use(permission)
 
 
 
-
-
 #### 按钮
 
 * 添加
@@ -4155,6 +4153,221 @@ app.use(permission)
 
 
 
+#### 修改分类
+
+* **创建接口**
+
+  ```javascript
+  // ~/api/image_class.js
+  export function updateImageClass(id, data) {
+      return axios.post("/admin/image_class/" + id, data)
+  }
+  ```
+
+* **执行接口**
+
+  ```vue
+  <template>
+   <!-- 侧边上 -->
+      <div class="top">     <!--   -->
+          <AsideList :active="activeId == item.id" v-for=" (item,index) in list" :key="index" @edit="handleEdit(item)">
+              {{ item.name }}
+          </AsideList>
+  </template> 
+  <script setup>
+      // 提交表单
+      const handleSubmit = ()=>{
+          formRef.value.validate((valid)=>{
+              if(!valid) return
+              console.log("提交成功");
+              formDrawerRef.value.showLoading()
+  
+              // 如果数值大于 0 ，执行更新接口，否则就执行新增接口
+              const fun = editId.value ? updateImageClass(editId.value,form) : createImageClass(form)                  
+  
+              fun.then(res=>{
+                  toast(drawerTitle.value + "成功")
+                  getData(editId.value ? currentPage : 1)                          // 刷新新增数据
+                  formDrawerRef.value.close()         // 关闭抽屉窗口
+              }) 
+              .finally(()=>{
+                  formDrawerRef.value.hideLoading()
+              })
+          })
+      }
+      
+      // 新增分类
+      const handleCreate = ()=> {
+          editId.value = 0 
+          form.name=""                        // 清空表单
+          form.order=50
+          formDrawerRef.value.open()          // 打开抽屉
+      }
+  
+      // 编辑分类
+      const handleEdit = (row)=>{
+          editId.value = row.id
+          form.name = row.name
+          form.order = row.order
+          formDrawerRef.value.open()                  // 打开抽屉修改数据
+      }
+  </script>
+      
+
+
+
+#### 删除分类
+
+* **创建接口**
+
+  ```javascript
+  // ~/api/image_class.js
+  // 图片分类数据删除
+  export function deleteImageClass(id) {
+      return axios.post(`/admin/image_class/${id}/delete`)
+  }
+
+* **执行接口**
+
+  ```vue
+  // ~\components\ImageAside.vue
+  <template>
+  	<div class="top">     <!--   -->
+          <AsideList :active="activeId == item.id" v-for=" (item,index) in list" :key="index" @edit="handleEdit(item)" @delete="handleDelete(item.id)">
+              {{ item.name }}
+          </AsideList>
+  </template>
+  <script setup>
+      import { getImageClassList, createImageClass, updateImageClass, deleteImageClass } from "~/api/image_class.js"
+      // 删除分类
+      const handleDelete = (id)=>{
+          loading.value = true
+          deleteImageClass(id)                        // 执行删除接口
+          .then(res=>{
+              toast("删除成功")
+              getData()                               // 重新获取数据    
+          })
+          .finally(()=>{
+              loading.value = false
+          })
+      }
+  </script>
+  ```
+
+* **弹出提示**
+
+  ```vue
+  // ~/components/AsideList.vue
+  <template>
+  	<el-popconfirm title="是否要删除该分类?" confirm-button-text="确认" cancel-button-text="取消" @confirm="$emit('delete')" >
+          <template #reference>
+              <el-button class="px-1" text type="primary" size="small" >
+                  <el-icon :szie="12"><Close /></el-icon>
+              </el-button> 
+          </template>
+      </el-popconfirm>
+  </template>
+  <script setup>
+      defineProps({
+          active:{
+              type:Boolean,
+              default:false
+          }
+      })
+      defineEmits(["edit","delete"])
+  </script>
+
+
+
+
+
+### 4. 图片分页管理
+
+#### **创建接口**
+
+```javascript
+// ~/api/image.js
+import axios from "~/axios"
+export function getImageList(id, page = 1) {
+    return axios.get(`/admin/image_class/${id}/image/${page}`)
+}
+```
+
+
+
+#### **分页栏**
+
+```vue
+// ~/components/ImageMain.vue
+<template>
+    <!-- 主体 -->
+    <el-main class="image-main" v-loading="loading">
+        <!-- 主体下 -->
+        <div class="bottom">
+            <!-- 分页栏区域 -->
+            <el-pagination 
+            background 
+            layout="prev,pager, next" 
+            :total="total" 
+            :current-page="currentPage" 
+            :page-size="limit" 
+            @current-change="getData" />
+        </div>
+    </el-main>
+</template>
+<script setup>
+    import { ref } from "vue";
+    import { getImageList } from "~/api/image.js";
+
+    // 分页数据
+    const currentPage = ref(1)   // 当前页码默认为1
+    const total = ref(0)         // 总条数默认为 0
+    const limit = ref(10)        // 每页条数默认为 10
+    const list = ref([])
+    const loading = ref(false)
+    const image_class_id = ref(0)   // 图片分类id 
+    
+    // 获取数据
+    function getData(p=null){
+        if(typeof p=="number"){       // p 为当前页改变时数字
+            currentPage.value = p
+        }
+        loading.value = true
+        getImageList(image_class_id.value,currentPage.value)
+        .then(res =>{
+            console.log(res);
+            
+            total.value = res.totalCount      // 总条数 = api 返回总条数
+            list.value = res.list             // 列表数据 = api 返回列表数据
+        })
+        .finally(()=>{
+            loading.value = false
+        })
+    }
+    // 更具分类 id 重新加载图片列表
+    const LoadData = (id) =>{
+        currentPage.value = 1
+        image_class_id.value = id
+        getData()
+    }
+    defineExpose({
+        LoadData
+    })
+</script>
+```
+
+
+
+#### 图片列表组件
+
+
+
+
+
+
+
+
+
 
 
 ## 项目结构
@@ -4166,7 +4379,7 @@ app.use(permission)
 └── src
 	├── api                       # (folder) 接口请求文件夹
 	├──	assets                    # (folder) 				      
-	├──	components                # (folder)    
+	├──	components                # (folder) 组件文件夹   
 	├──	composables               # (folder) 常用代码工具文件夹
 	├──	directives                # (folder) 自定义指令文件夹  
 	├── layouts                   # (folder) 后台主布局文件夹  
